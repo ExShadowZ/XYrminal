@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>XYrminal — ユーザーガイド</title>
+<style>
+body { font-size: 13px; line-height: 1.5; }
+h2 { margin: 6px 0 10px 0; }
+h3 { margin: 18px 0 6px 0; }
+h4 { margin: 12px 0 4px 0; }
+ul { margin: 4px 0 8px 0; padding-left: 20px; }
+li { margin: 3px 0; }
+code { background: rgba(128,128,128,0.18); padding: 1px 5px; border-radius: 3px; }
+.kbd { background: rgba(128,128,128,0.25); padding: 1px 6px; border-radius: 3px;
+       font-family: Consolas, monospace; }
+table { border-collapse: collapse; margin: 6px 0 10px 0; }
+td { padding: 2px 10px 2px 0; vertical-align: top; }
+td.k { color: #9a93b5; white-space: nowrap; }
+pre { background: rgba(128,128,128,0.14); padding: 8px 10px; border-radius: 4px;
+      overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h2 style="color:#a855f7;">XYrminal — ユーザーガイド</h2>
+
+<p>XYrminal は、シリアル・TCP・UDP 経由でデバイスと通信するための
+マルチプロトコルターミナルです。クライアントまたはサーバーとして動作し、
+ファイル転送、ライブグラフ描画、マクロ・シナリオスクリプトの実行、
+トリガーによる部分文字列のハイライト、すべてのディスク保存が可能です。</p>
+
+<h3 style="color:#a855f7;">1. タブの概要</h3>
+<ul>
+  <li><b>COM</b> — シリアルポート (RS-232、RS-485、USB-CDC)。</li>
+  <li><b>TCP Client</b> — リモート TCP サーバーへの接続。</li>
+  <li><b>TCP Server</b> — ローカルポートで待ち受け、多数のクライアントを
+      受け入れます。</li>
+  <li><b>UDP Client</b> — 固定の host:port との送受信。</li>
+  <li><b>UDP Server</b> — ローカルポートをバインドし、任意の相手から受信、
+      ブロードキャスト。</li>
+</ul>
+
+<h3 style="color:#a855f7;">2. COM タブ</h3>
+
+<h4>2.1 接続</h4>
+<ul>
+  <li>ドロップダウンからポートを選択します。リストが古い場合は
+      <b>スキャン</b> を押します。</li>
+  <li><b>接続</b> でポートを開き、<b>切断</b> で閉じます。</li>
+  <li>ポートが開いているとき：
+      <ul>
+        <li><b>DTR</b> と <b>RTS</b> トグルは 2 本の出力ラインを制御します。
+            DTR は通常 MCU のリセットピンに、RTS は BOOT0 または
+            bootloader 有効化ピンに接続されています。クリックすると
+            ポートを開き直すことなくラインを反転できます。</li>
+        <li>4 つの LED が入力ラインを示します：<b>CD</b>、<b>RI</b>、
+            <b>DSR</b>、<b>CTS</b>。緑 = ライン有効、暗色 = 無効。</li>
+      </ul>
+  </li>
+</ul>
+
+<h4>2.2 シリアル設定</h4>
+<p>ボーレート、データビット、パリティ、ストップビット、フロー制御。
+各コンボの一番下に、非標準値のための <i>カスタム…</i> 項目があります。</p>
+
+<h4>2.3 ターミナル設定</h4>
+<ul>
+  <li><b>自動スクロール</b> — 新しいデータが届いたときに最下部へ
+      ジャンプします。</li>
+  <li><b>タイムスタンプ</b> — 各行の前に <code>[HH:MM:SS.mmm]</code> を
+      付けます。</li>
+  <li><b>自動保存ログ</b> — 現在のセッションを実行中に直接ファイルへ
+      書き込みます。</li>
+  <li><b>フォーマット</b> — 受信バイトのデコード方法：
+      <ul>
+        <li>Raw：<b>HEX</b>、<b>DEC</b>、<b>OCT</b>、<b>BIN</b>。</li>
+        <li>テキスト：<b>ASCII</b>、<b>UTF-8</b>、<b>UTF-16 LE</b>、
+            <b>UTF-16 BE</b>、<b>CP1251</b>、<b>CP1252</b>、<b>CP866</b>、
+            <b>KOI8-R</b>、<b>Latin-1</b>、<b>Shift-JIS</b>、<b>GB2312</b>、
+            <b>GBK</b>。</li>
+      </ul>
+      Raw モードでは、受信した各チャンクは即座に独立した行として
+      印刷されます。テキストモードでは、部分的な行は改行が来るか
+      50 ms の沈黙が続くまでバッファリングされ、末尾の改行がない
+      データでも表示されます（Hercules スタイルのフラッシュ）。</li>
+  <li><b>グラフ</b> — ライブグラフパネルを開きます（第 5 節参照）。</li>
+  <li><b>クリア</b> — ターミナル表示を消去します。</li>
+  <li><b>ログを保存</b> — 現在のバッファを <code>logs/</code> に
+      書き出します。</li>
+</ul>
+
+<h4>2.4 送信</h4>
+<ul>
+  <li>テキストを入力し、<b>Enter</b> または <b>送信</b> を押します。
+      <span class="kbd">↑</span> / <span class="kbd">↓</span> で入力履歴を
+      閲覧できます。</li>
+  <li><b>HEX</b> — 入力を 16 進バイトとして扱います（"AA BB CC" → 3
+      バイト）。HEX モードでは <i>+CR</i> と <i>CR=CR+LF</i> は無視
+      されます。</li>
+  <li><b>+CR</b> — 行末を追加します。<b>CR=CR+LF</b> 付きなら
+      <code>CR+LF</code>、そうでなければ <code>CR</code> のみ。</li>
+  <li><b>マクロ</b> — 第 7 節参照。</li>
+  <li><b>ファイル転送</b> — 第 6 節参照。</li>
+</ul>
+
+<h3 style="color:#a855f7;">3. TCP / UDP クライアントタブ</h3>
+<ul>
+  <li><b>接続</b> — リモートホスト / ポート、オプションのローカルバインド、
+      タイムアウト。</li>
+  <li><b>接続を維持</b>（TCP Client のみ）— ピアが切断した場合、ワーカーは
+      2 秒ごとに再試行を続け、再接続するか「切断」を押すまで続きます。</li>
+  <li><b>Ping</b> — TCP connect() プローブで、PowerShell の
+      Test-Connection と同じ統計：<b>チェック</b>で固定シリーズを実行、
+      <b>開始</b>で周期的な ping を開始、<b>停止</b>で終了。</li>
+</ul>
+
+<h3 style="color:#a855f7;">4. TCP / UDP サーバータブ</h3>
+<ul>
+  <li><b>TCP Server</b> — 待ち受け、クライアント一覧、オプションの
+      <b>エコー</b>、オプションの <b>全員にブロードキャスト</b>、
+      個別または全ピアの切断。</li>
+  <li><b>UDP Server</b> — バインド、任意の相手から受信、最後の送信者を
+      記憶、最後の相手 / 明示的なアドレス / 255.255.255.255 へ返信。</li>
+  <li>受信データには <code>[host:port]</code> のプレフィックスが付きます。
+      サーバーイベント（<code>[+]</code>、<code>[-]</code>、待ち受け中、
+      停止）は専用の色を持ちます。</li>
+</ul>
+
+<h3 style="color:#a855f7;">5. ライブグラフ</h3>
+<p>「ターミナル設定」で <b>グラフ</b> を押します。ターミナル領域が
+2 分割され、左がテキスト、右がライブグラフになります。</p>
+<ul>
+  <li>各行 = 1 変数：<b>名前</b> + <b>パースマーカー</b>。名前は必須、
+      マーカーは任意。
+      <ul>
+        <li>マーカーあり（例：<code>VREF=</code>）：パーサーは受信
+            テキスト内でマーカーを探し、その直後の最初の数値を
+            読み取ります。</li>
+        <li>マーカーなし：パーサーは受信チャンク内のどこかにある
+            最初の数値を読み取ります。</li>
+      </ul>
+  </li>
+  <li>複数行 = 同じグラフ上の複数の線、それぞれが独自の色を持ちます。</li>
+  <li><b>開始</b> でキャプチャを開始します。<b>一時停止 / 再開</b> で
+      データを失わずにキャプチャを凍結します。<b>停止</b> でセッションを
+      終了しパネルを閉じます。</li>
+  <li><b>T-Mode</b> — X 軸がサンプルインデックスではなく <i>秒前</i> に
+      なります。新しいデータがなくてもグラフは連続的にスクロールします。</li>
+  <li><b>View</b> — ウィンドウに表示するポイント数（インデックスモード）
+      または秒数（T-Mode）。</li>
+  <li><b>Export CSV</b> — すべての取得チャンネルを表計算ソフト向けの
+      CSV ファイルに保存します：
+      <code>index,time_s,&lt;チャンネル1&gt;,&lt;チャンネル2&gt;,…</code>。
+      欠落した末尾の値は空のセルになります。UTF-8 with BOM なので
+      Excel がキリル文字のチャンネル名を正しく開けます。</li>
+  <li>グラフ上にマウスを置くと、正確な値のツールチップが表示されます。</li>
+</ul>
+
+<h3 style="color:#a855f7;">6. ファイル転送</h3>
+<ul>
+  <li>COM、TCP Client、UDP Client タブで利用可能です。</li>
+  <li>プロトコル：
+      <ul>
+        <li><b>Raw</b> — ファイルを生のバイトブロックで送信します。
+            ブロック間遅延は設定可能。ブートローダー、イメージ、
+            コンフィグに最適。</li>
+        <li><b>XMODEM</b> — 古典的な 128 バイトブロック、CRC-16、
+            ACK/NAK ハンドシェイク、ブロックごとに最大 10 回の
+            再試行。</li>
+        <li><b>YMODEM</b> — XMODEM-1K で、最初のブロックがファイル名 +
+            サイズ。STM32 / ESP / AVR ブートローダーの標準。</li>
+        <li><b>ZMODEM</b> — まだ実装されていません。</li>
+      </ul>
+  </li>
+  <li>ブロックサイズ、ブロック遅延、最大ファイルサイズは
+      <i>設定 → 転送設定</i> で構成します。そこでは
+      <b>最後に送信したファイルを記憶</b> を有効にして、次回起動時に
+      パスとプロトコルを復元することもできます。</li>
+  <li>XMODEM / YMODEM / ZMODEM は UDP では利用できません。</li>
+</ul>
+
+<h3 style="color:#a855f7;">7. マクロとシナリオ</h3>
+<p>各タブには 10 スロット M1…M10 があります。各スロットには
+プレーンマクロまたはシナリオスクリプトのいずれかを格納できます。</p>
+
+<h4>7.1 プレーンマクロ</h4>
+<ul>
+  <li>短いテキスト（または 16 進バイト）をワンクリックで送信します。</li>
+  <li>各マクロは独自の <b>+CR</b>、<b>CR=CR+LF</b>、<b>HEX</b> フラグを
+      持ちます — 入力フィールドの上にあるものとは独立しています。</li>
+  <li>ボタンにマウスを置くと内容が表示されます。空のスロットは
+      無効です。</li>
+</ul>
+
+<h4>7.2 シナリオスクリプト (.xyscen)</h4>
+<p>1 行に 1 コマンドのシンプルな UTF-8 テキストファイルです。コマンド
+には 2 つのスタイルがあり、同一ファイル内で自由に混在できます：</p>
+
+<p><b>スタイル A — フラット、1 行に 1 コマンド</b>（元の構文、
+完全にサポート継続）：</p>
+<pre># コメント
+// これもコメント
+send "AT+RST\r\n"
+send HEX "AA 55 01 FF"
+wait 3000
+expect "OK" 2000
+expect_search "ERROR" 3000
+assert_rx "READY"
+log "こんにちは"
+let x = 5
+send "AT+SET=$x\r\n"</pre>
+
+<p><b>スタイル B — C 風のブロックを持つミニ言語</b>（変数、式、
+if/else、while、for）：</p>
+<pre>let id = 3
+let ok = 0
+
+for (let i = 0; i &lt; id; i++) {
+    send "AT+PING\r\n"
+    if (expect("PONG", 2000)) {
+        ok++
+    } else {
+        log "デバイス $i は応答なし"
+    }
+    wait 200
+}
+
+if (ok == id) {
+    log "$id 台すべて OK"
+} else {
+    log "$ok / $id 台 OK"
+}</pre>
+
+<p>両方のスタイルを混在できます。元の構文で書かれた古いスクリプトは
+変更なしで動作し続けます。</p>
+
+<h4>7.3 コマンド完全リファレンス</h4>
+
+<p><b>データ送信</b></p>
+<ul>
+  <li><code>send "テキスト"</code> — 文字列を送信 (UTF-8)。エスケープ：
+      <code>\r \n \t \\ \" \' \0 \xNN</code>。</li>
+  <li><code>send HEX "AA 55 01 FF"</code> — 旧エイリアス、生の 16 進
+      バイトを送信します。</li>
+  <li><code>send[ENC] "テキスト"</code> — <code>send</code> と同じですが、
+      明示的なエンコーディングを使用します。対応 ENC：
+      <ul>
+        <li>Raw：<b>HEX</b> ("AA 55")、<b>BIN</b> ("10101010 01010101")、
+            <b>DEC</b> ("170 85")、<b>OCT</b> ("252 125")。</li>
+        <li>テキスト：<b>UTF-8</b>、<b>ASCII</b>、<b>UTF-16LE</b>、
+            <b>UTF-16BE</b>、<b>CP1251</b>、<b>CP1252</b>、<b>CP866</b>、
+            <b>KOI8-R</b>、<b>Latin-1</b>、<b>Shift-JIS</b>、<b>GB2312</b>、
+            <b>GBK</b>。</li>
+      </ul>
+  </li>
+  <li><code>send_slow[ENC] "テキスト" ms</code> — バイト単位で送信し、
+      バイト間に <i>ms</i> ミリ秒の遅延を入れます。遅い MCU UART 向け。
+      <code>[ENC]</code> なしの場合は UTF-8 を使用。</li>
+</ul>
+
+<p><b>待機とチェック</b></p>
+<ul>
+  <li><code>wait ms</code> — 指定ミリ秒のポーズ。</li>
+  <li><code>expect "テキスト" ms</code> — 最大 <i>ms</i> の間、RX に
+      <i>テキスト</i> が現れるのを待ちます。呼び出し<i>以降</i>に
+      受信したバイトのみが対象。タイムアウトでスクリプト失敗。</li>
+  <li><code>expect_search "テキスト" ms</code> — 同様ですが、スクリプト
+      開始以来蓄積された<i>全</i> RX バッファを検索します。待機を
+      始める前にデバイスが既にテキストを送っていた場合に便利。</li>
+  <li><code>assert_rx "テキスト"</code> — <i>テキスト</i> が RX バッファ
+      に<i>既に</i>存在するかチェックします。即時、待機なし。</li>
+  <li>式形式（スタイル B）では <code>expect(...)</code>、
+      <code>expect_search(...)</code>、<code>assert_rx(...)</code> は
+      ブール値を返し、失敗してもスクリプトを中断しません。
+      <code>if (...)</code> 内での使用に最適。</li>
+</ul>
+
+<p><b>変数と出力</b></p>
+<ul>
+  <li><code>let 名前 = 値</code> — 変数を定義します。値は数値、引用符
+      付き文字列、または <code>$他の変数</code>（参照）。</li>
+  <li>任意の文字列内で <code>$名前</code> により変数の値を挿入できます：
+      <code>send "AT+SET=$id\r\n"</code>。</li>
+  <li><code>log "テキスト"</code> — <code>[SCENARIO] テキスト</code> と
+      してターミナルに出力します。<code>$var</code> を展開します。</li>
+  <li><code>print 式</code> — 任意の式の値を出力します。</li>
+</ul>
+
+<p><b>制御構造（スタイル B）</b></p>
+<ul>
+  <li><code>if (条件) { ... } else if (条件) { ... } else { ... }</code>。</li>
+  <li><code>while (条件) { ... }</code>。</li>
+  <li><code>for (初期化; 条件; ステップ) { ... }</code>。</li>
+  <li>ループ内の <code>break</code> / <code>continue</code>。</li>
+</ul>
+
+<p><b>演算子（スタイル B）</b></p>
+<ul>
+  <li>算術：<code>+ - * / %</code>。</li>
+  <li>比較：<code>== != &lt; &gt; &lt;= &gt;=</code>。</li>
+  <li>論理：<code>&amp;&amp; || !</code>（短絡評価）。</li>
+  <li>インクリメント / デクリメント：<code>x++</code>、<code>x--</code>。</li>
+  <li>複合代入：<code>+= -= *= /= %=</code>。</li>
+</ul>
+
+<p><b>組み込み関数</b></p>
+<table>
+  <tr><td class="k"><code>expect("needle", ms)</code></td>
+      <td>bool — 上記参照。</td></tr>
+  <tr><td class="k"><code>expect_search("needle", ms)</code></td>
+      <td>bool — 上記参照。</td></tr>
+  <tr><td class="k"><code>assert_rx("needle")</code></td>
+      <td>bool — RX バッファ全体を即座にチェック。</td></tr>
+  <tr><td class="k"><code>num_from_rx(marker)</code></td>
+      <td>int — RX バッファ内の <i>marker</i> 直後の最初の数値。
+          <i>marker</i> が空なら全体の最初の数値。見つからなければ 0。
+          小数部は切り捨て（整数のみ）。</td></tr>
+  <tr><td class="k"><code>len(s)</code></td>
+      <td>int — 文字列長。</td></tr>
+  <tr><td class="k"><code>num(s)</code></td>
+      <td>int — 数値化；非数値は 0。</td></tr>
+  <tr><td class="k"><code>str(v)</code></td>
+      <td>文字列 — テキストに変換。</td></tr>
+  <tr><td class="k"><code>abs(n)</code></td>
+      <td>int — 絶対値。</td></tr>
+  <tr><td class="k"><code>time_ms()</code></td>
+      <td>int — スクリプト開始からのミリ秒。</td></tr>
+</table>
+
+<h4>7.4 実用的な例</h4>
+<pre># 温度を読んでファンを切り替える
+send "AT+READ\r\n"
+
+if (expect("OK", 2000)) {
+    let t = num_from_rx("TEMP=")
+    log "温度 = $t"
+    if (t &gt; 30) {
+        send "AT+FAN=1\r\n"
+    } else {
+        send "AT+FAN=0\r\n"
+    }
+} else {
+    log "デバイスが応答しません"
+}</pre>
+
+<h4>7.5 スロットの構成</h4>
+<ul>
+  <li><b>設定 → マクロを設定 → &lt;タブ&gt;</b> で 10 行のダイアログが
+      開きます。各行：テキストフィールド + <b>+CR</b> +
+      <b>CR=CR+LF</b> + <b>HEX</b>。</li>
+  <li>上部のボタン：
+      <ul>
+        <li><b>シナリオを追加…</b> — <code>.xyscen</code> ファイルと
+            スロット番号を選択します。スロットのボタンが <b>S#</b> に
+            なります。</li>
+        <li><b>シナリオをクリア</b> — スロットをプレーンマクロに戻します。</li>
+      </ul>
+  </li>
+  <li><b>設定 → すべてのマクロをリセット → …</b> で 1 つのタブまたは
+      すべてのマクロを消去します。</li>
+  <li>シナリオの実行中は、すべてのマクロと入力行が無効化されます。
+      進行状況は <code>[SCENARIO] …</code> 行として、専用の色で
+      表示されます。</li>
+</ul>
+
+<h3 style="color:#a855f7;">8. トリガー</h3>
+<p>各タブは、ターミナル出力内の部分文字列をカスタムの前景色と背景色で
+ハイライトできます。</p>
+<ul>
+  <li><b>設定 → トリガーを設定 → &lt;タブ&gt;</b> でダイアログが
+      開きます。</li>
+  <li>各行：一致させるテキスト + 前景色スウォッチ + 背景色スウォッチ。</li>
+  <li>一致は大文字小文字を区別しません。重複する場合は上の行が優先
+      されます。</li>
+  <li>タブごとに最大 50 個のトリガー。</li>
+  <li>トリガーは <code>.xyrmc</code> ログにも保存されるため、ブラウザで
+      同じハイライトがレンダリングされます。</li>
+  <li><b>設定 → トリガーをリセット → &lt;タブ&gt; / すべて</b> で
+      消去します。</li>
+</ul>
+
+<h3 style="color:#a855f7;">9. ログ</h3>
+<ul>
+  <li><b>ログを保存</b> — 現在のバッファをアプリの隣の
+      <code>logs/</code> に自動生成名で書き込みます。</li>
+  <li><b>ログを名前を付けて保存…</b> — パスとフォーマットを選択：
+      <ul>
+        <li><b>.xyrm</b> — プレーンな UTF-8 テキスト。</li>
+        <li><b>.xyrmc</b> — インラインカラー付きの完全な HTML ドキュメント。
+            任意のブラウザで開くと、トリガーのハイライトを含め、
+            当時のターミナルを正確に再現できます。</li>
+      </ul>
+  </li>
+  <li><b>ログを開く…</b> — 以前に保存したログを開きます：
+      <ul>
+        <li><code>.xyrm</code> — 現在のタブのターミナルに読み込まれます。</li>
+        <li><code>.xyrmc</code> — 元の行間遅延でログを再生する
+            <b>再生 / 一時停止 / 停止</b> ツールバー付きの別ビューア
+            ウィンドウが開きます。</li>
+      </ul>
+  </li>
+  <li><b>ログフォルダを開く</b> — ファイルマネージャで <code>logs/</code>
+      を開きます。</li>
+</ul>
+
+<h3 style="color:#a855f7;">10. 設定メニュー</h3>
+<table>
+  <tr><td class="k"><b>テーマ</b></td>
+      <td>10 種類の内蔵パレット、OS に追従する「システム」、編集可能な
+          「カスタム…」、即座にランダムパレットを生成する「ランダム」。
+          カスタムパレットは QSettings に保存されます。</td></tr>
+  <tr><td class="k"><b>ターミナル文字色</b></td>
+      <td>各出力カテゴリを個別に色付け、または現在のテーマにリセット。
+          16 種類の名前付き色。すでに他のカテゴリで使われている色は
+          競合を避けるため無効化されています。</td></tr>
+  <tr><td class="k"><b>言語</b></td>
+      <td>実行中に UI 言語を切り替えます。英語、ロシア語、ベラルーシ語、
+          ドイツ語、フランス語、中国語、日本語、韓国語。</td></tr>
+  <tr><td class="k"><b>UI スケール</b></td>
+      <td>75% / 100% / 125% / 150%。フォント、パディング、コントロール
+          サイズ、最小ウィンドウサイズをスケールします。選択は
+          記憶されます。</td></tr>
+  <tr><td class="k"><b>マクロを設定</b></td>
+      <td>タブごとに 10 個のマクロスロットを編集します。</td></tr>
+  <tr><td class="k"><b>すべてのマクロをリセット</b></td>
+      <td>1 つのタブまたはすべてのマクロを消去します。</td></tr>
+  <tr><td class="k"><b>トリガーを設定</b></td>
+      <td>タブごとのトリガーリストを編集します。</td></tr>
+  <tr><td class="k"><b>トリガーをリセット</b></td>
+      <td>1 つのタブまたはすべてのトリガーを消去します。</td></tr>
+  <tr><td class="k"><b>転送設定</b></td>
+      <td>ファイル転送のブロックサイズ / ブロック遅延 / 最大ファイル
+          サイズ、および「最後に送信したファイルを記憶」。</td></tr>
+  <tr><td class="k"><b>保存形式</b></td>
+      <td>プレーンテキスト (<code>.xyrm</code>) またはカラー HTML
+          (<code>.xyrmc</code>)。</td></tr>
+</table>
+
+<h3 style="color:#a855f7;">11. 表示メニュー</h3>
+<ul>
+  <li>現在のタブの個々のグループを表示または非表示にします（接続、
+      シリアル設定、ターミナル設定、サーバー、Ping）。</li>
+  <li><b>すべて表示</b> — 現在のタブのすべてのグループを表示します。</li>
+  <li><b>すべて非表示</b> — 現在のタブのすべてのグループを非表示に
+      します。</li>
+</ul>
+
+<h3 style="color:#a855f7;">12. キーボードショートカット</h3>
+<ul>
+  <li><span class="kbd">Ctrl+F</span> — ターミナル内で検索。</li>
+  <li><span class="kbd">F3</span> / <span class="kbd">Shift+F3</span> —
+      次の / 前の一致。</li>
+  <li><span class="kbd">Enter</span> 送信入力欄 — 送信。</li>
+  <li><span class="kbd">↑</span> / <span class="kbd">↓</span> 送信入力欄 —
+      コマンド履歴。</li>
+  <li><span class="kbd">Esc</span> — 検索パネルを閉じる。</li>
+</ul>
+
+<h3 style="color:#a855f7;">13. 記憶される内容</h3>
+<p>終了時に、アプリはウィンドウジオメトリ、アクティブタブ、COM 設定、
+TCP / UDP 設定、ping 設定、ターミナルと送信のトグル、グループの
+可視性、テーマ（カスタムパレットを含む）、UI スケール、言語、
+ターミナル色、保存形式、すべてのマクロとすべてのトリガー、
+「最後に送信したファイルを記憶」が有効な場合は最後に送信した
+ファイルパスを保存します。次回起動時にすべて復元されます。</p>
+
+<h3 style="color:#a855f7;">14. テーマの概要</h3>
+<ul>
+  <li><b>システム</b> — OS の配色に従います（ダーク → Black、
+      ライト → White）。</li>
+  <li><b>Purple</b>、<b>Gray</b>、<b>White</b>、<b>Black</b>、<b>Beige</b> —
+      単色パレット。アクセント（タブ、ボタン、グループタイトル、
+      ハイライト）はテーマ色を使用し、背景はその暗い色合いになります。
+      赤と緑の意味的ボタンはテーマに関係なく赤と緑のままです。</li>
+  <li><b>Turquoise-Orange</b>、<b>Graphite-Sand</b>、<b>Purple-Gold</b>、
+      <b>Coral-Mint</b>、<b>Navy-Crimson</b> — 2 色パレット。
+      背景に 1 色目、アクセントに 2 色目を使用します。</li>
+  <li><b>カスタム…</b> — ユーザー定義パレット。20 個のカラーロールを
+      それぞれカラーピッカーで編集できます。ボタン：
+      <ul>
+        <li><b>Random</b> — 調和のとれたランダムパレットを生成します。</li>
+        <li><b>Reset to defaults</b> — 内蔵の紫に戻します。</li>
+      </ul>
+  </li>
+  <li><b>ランダム</b>（メニュー内） — ランダムなカスタムパレットを
+      即座に生成して適用します。</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,614 @@
+# =============================================================================
+# XYrminal — full scenario language demo / reference
+# =============================================================================
+#
+# This file is a runnable example. It exercises every feature of the
+# scenario mini-language, in small self-contained blocks, so you can copy
+# the parts you need and delete the rest.
+#
+# It is NOT meant to talk to a real device — most blocks send fictional
+# commands and wait for fictional responses. If you run it against a real
+# device, it will just fail on the first "expect" and stop. That is fine.
+#
+# File format
+# -----------
+# - Plain UTF-8 text.
+# - One command per line, or C-like blocks for the mini-language.
+# - Blank lines are ignored.
+# - Comments: # or // for one line, /* ... */ for a block.
+#
+# Two styles, freely mixable in the same file:
+#
+#   Style A — flat, one command per line
+#       send "AT+RST\r\n"
+#       wait 3000
+#       expect "OK" 2000
+#
+#   Style B — mini-language with braces, variables, if/else, while, for
+#       let n = 0
+#       for (n = 0; n < 3; n++) { ... }
+#
+# Both styles compile to the same internal bytecode, so there is no
+# performance difference. Use whichever is clearer for the task at hand.
+#
+# IMPORTANT — variables and the dollar sign
+# -----------------------------------------
+# $name interpolation works ONLY inside string literals, e.g.:
+#     log "value = $n"
+#     send "AT+SET=$n\r\n"
+#
+# Outside strings, a variable is written by its plain name, with NO
+# dollar sign:
+#     let copy = n            <-- correct
+#     print n                 <-- correct
+#     if (n > 5) { ... }      <-- correct
+#
+# The following are PARSE ERRORS and must be avoided:
+#     let copy = $n
+#     print $n
+#     if ($n > 5) { ... }
+#
+# IMPORTANT — sending hex and other encodings
+# -------------------------------------------
+# The modern form is:  send[ENC] "..."
+#     send[HEX] "AA 55 01 FF"
+#     send[UTF-8] "text"
+#
+# The old form  send HEX "..."  is NOT supported by the current parser.
+# Use the bracketed form.
+#
+# =============================================================================
+
+
+# =============================================================================
+# SECTION 0 — Where to start: a very short typical script
+# =============================================================================
+#
+# The 90 % case looks like this. Everything below this section is
+# reference material.
+
+# send a reset command, wait for the device to come up, read a value,
+# react to it.
+
+send "AT+RESET\r\n"
+wait 3000
+
+if (expect("READY", 5000)) {
+    log "device is up"
+    send "AT+READ\r\n"
+    if (expect("OK", 2000)) {
+        let t = num_from_rx("TEMP=")
+        log "temperature = $t"
+        if (t > 30) {
+            send "AT+FAN=1\r\n"
+        } else {
+            send "AT+FAN=0\r\n"
+        }
+    } else {
+        log "no OK after READ"
+    }
+} else {
+    log "device did not come up"
+}
+
+log "script done"
+
+
+# =============================================================================
+# SECTION 1 — Comments and whitespace
+# =============================================================================
+
+# hash-style comment
+// slash-style comment
+/*
+   Block comment.
+   Can span multiple lines.
+   Nesting is not supported.
+*/
+
+    # Leading whitespace on a command line is fine.
+        send "AT+HELLO\r\n"
+
+# Blank lines between commands are fine.
+
+
+# =============================================================================
+# SECTION 2 — Sending data
+# =============================================================================
+#
+# Style A and Style B share the same set of send commands.
+
+# --- send "text" -------------------------------------------------------------
+# Sends the string encoded as UTF-8.
+#
+# Escape sequences inside the string:
+#     \r   carriage return      (0x0D)
+#     \n   line feed            (0x0A)
+#     \t   tab                  (0x09)
+#     \\   backslash
+#     \"   double quote
+#     \'   single quote
+#     \0   null byte
+#     \xNN byte with hex value NN
+
+send "AT+RST\r\n"
+send "line1\r\nline2\r\n"
+send "quote: \" inside string"
+send "byte: \x7E\x00\xFF"
+
+# --- send[ENC] "..." --------------------------------------------------------
+# Same as send but with an explicit encoding. ENC goes in square brackets
+# right after "send". The value is case-insensitive.
+#
+# Raw encodings (byte-based):
+#     HEX   "AA 55 01 FF"
+#     BIN   "10101010 01010101 00000001 11111111"
+#     DEC   "170 85 1 255"
+#     OCT   "252 125 001 377"
+#
+# Text encodings (codec-based):
+#     UTF-8, ASCII
+#     UTF-16LE, UTF-16BE
+#     CP1251, CP1252, CP866, KOI8-R
+#     Latin-1, Shift-JIS, GB2312, GBK
+
+send[HEX]      "AA 55 01 FF"
+send[HEX]      "AABBCC"           # spaces are optional
+send[HEX]      "AA-BB-CC"         # dashes are ignored
+send[HEX]      "AA,BB,CC"         # commas are ignored
+
+send[BIN]      "10101010 01010101"
+send[DEC]      "170 85 1 255"
+send[OCT]      "252 125 001 377"
+
+send[UTF-8]    "привет мир"
+send[ASCII]    "plain ascii only"
+send[UTF-16LE] "wide string LE"
+send[UTF-16BE] "wide string BE"
+send[CP1251]   "кириллица windows"
+send[CP866]    "кириллица dos"
+send[KOI8-R]   "кириллица koi8"
+send[Latin-1]  "café résumé"
+send[Shift-JIS] "日本語のテキスト"
+send[GB2312]   "简体中文"
+send[GBK]      "中文扩展"
+
+# --- send_slow[ENC] "..." ms ------------------------------------------------
+# Sends the data one byte at a time, with a delay of `ms` milliseconds
+# between bytes. Useful for slow MCU UARTs that can't keep up with the
+# host's default burst rate. Without [ENC], UTF-8 is used.
+#
+# The delay is measured between consecutive byte transmissions. A value
+# of 0 is allowed and means "as fast as the OS will schedule us".
+
+send_slow[UTF-8] "AT+SLOWCMD\r\n" 50
+send_slow[HEX]   "AA BB CC DD"    10
+send_slow        "no enc, utf-8"  5
+
+# --- Style B: sending a computed payload ------------------------------------
+# Inside send / send_slow the string is interpolated: $name is replaced
+# by the current value of the variable `name` (see Section 5).
+
+let device_id = 3
+send "AT+SETID=$device_id\r\n"
+
+let cmd = "AT+MODE=1"
+send "$cmd\r\n"                     # expands the whole variable
+
+
+# =============================================================================
+# SECTION 3 — Waiting and matching
+# =============================================================================
+
+# --- wait ms ----------------------------------------------------------------
+# Pause for the given number of milliseconds. 0 is allowed; negative
+# values are clamped to 0.
+
+wait 100
+wait 3000
+wait 0
+
+# --- expect "needle" ms -----------------------------------------------------
+# Wait up to `ms` milliseconds for the given text to appear in RX.
+#
+# Semantics:
+#   * Considers only bytes received AFTER this call started.
+#   * On match: continues to the next line.
+#   * On timeout: prints "[SCENARIO] expect TIMEOUT: ..." and STOPS the
+#     whole script with a failure.
+#
+# Use this when you want a hard guarantee that the device answered.
+
+expect "OK"     2000
+expect "READY"  5000
+expect "PONG"   1000
+
+# --- expect_search "needle" ms ----------------------------------------------
+# Same as expect, but searches the WHOLE RX buffer accumulated since the
+# script started, ignoring any per-expect offsets.
+#
+# Semantics:
+#   * Considers all bytes received since script start.
+#   * On match: continues to the next line.
+#   * On timeout: fails the script.
+#
+# This is useful when the device sends a burst that already contains the
+# needle before you started waiting — for example if two responses
+# arrived glued together, or if you ran `wait` before calling expect.
+
+expect_search "OK"     2000
+expect_search "ERROR"  3000
+
+# --- assert_rx "needle" -----------------------------------------------------
+# Instant check: is `needle` already somewhere in the RX buffer?
+# On match: continues.
+# On miss:  fails the script immediately (no waiting).
+
+assert_rx "READY"
+assert_rx "ACK"
+
+# --- expect / expect_search / assert_rx as functions (Style B) --------------
+# In Style B they return a boolean and DO NOT fail the script on miss.
+# Perfect inside `if (...)` for a soft check.
+
+if (expect("OK", 2000)) {
+    log "device answered OK"
+} else {
+    log "device did not answer"
+}
+
+if (expect_search("WARN", 1000)) {
+    log "found a WARN somewhere in the log"
+}
+
+if (assert_rx("READY")) {
+    log "READY is already in the buffer"
+}
+
+
+# =============================================================================
+# SECTION 4 — Logging and printing
+# =============================================================================
+
+# --- log "text" -------------------------------------------------------------
+# Prints a line to the terminal as "[SCENARIO] <text>".
+# Supports $var interpolation.
+
+log "starting sequence"
+log "device id = $device_id"
+
+# --- print expression -------------------------------------------------------
+# Prints the value of any expression.
+#
+# IMPORTANT: outside strings there is no $. Just use the bare name of
+# the variable.
+
+print 42
+print 1 + 2 * 3
+print "literal text"
+print "sum is " + (10 + 20)
+print device_id                     # bare variable, no $
+
+
+# =============================================================================
+# SECTION 5 — Variables and $var interpolation
+# =============================================================================
+
+# --- let name = value -------------------------------------------------------
+# Value may be:
+#   - a number           let n = 42
+#   - a quoted string    let s = "hello"
+#   - another variable   let b = a     (copy of the value of a)
+
+let n       = 42
+let name    = "sensor-1"
+let pi_ish  = 3
+let copy    = n                     # copy, no $ outside strings
+
+# --- Interpolation in strings -----------------------------------------------
+# Inside ANY string used by send / send_slow / log / print, the sequence
+# $name is replaced by the current value of the variable `name`.
+# Unknown variables are left as-is ("$unknown").
+
+log "n = $n, name = $name"
+send "AT+NAME=$name\r\n"
+send "AT+N=$n\r\n"
+
+# --- Reassignment -----------------------------------------------------------
+# In Style A you can just assign:
+n = 100
+n = n + 1
+
+# --- Compound assignment (Style B) ------------------------------------------
+n += 5
+n -= 2
+n *= 2
+n /= 3
+n %= 7
+
+# --- Increment / decrement --------------------------------------------------
+n++
+n--
+
+# The above work in Style A too — they are statements, not expressions.
+
+
+# =============================================================================
+# SECTION 6 — Operators (Style B)
+# =============================================================================
+#
+# Used inside expressions: in `if (...)`, `while (...)`, `for (...)`,
+# in `let` values, in `print`, and in function arguments.
+#
+# Arithmetic:
+#     +  -  *  /  %
+#
+# Comparison:
+#     ==  !=  <  >  <=  >=
+#
+# Logic (short-circuit):
+#     &&   ||
+#     !
+#
+# String concatenation:
+#     "+" works on strings: "a" + "b" == "ab"
+#     If either side is a string, the other is converted.
+#
+# Note: the language has only integers. Division "/" is integer division,
+# and numbers coming from strings are truncated (see num_from_rx).
+
+if (1 + 2 == 3)          { log "arith ok" }
+if (10 % 3 == 1)         { log "modulo ok" }
+if (2 < 3 && 3 <= 3)     { log "comparison ok" }
+if (!(1 > 2))            { log "negation ok" }
+if ("a" + "b" == "ab")   { log "concat ok" }
+
+
+# =============================================================================
+# SECTION 7 — Control flow (Style B)
+# =============================================================================
+
+# --- if / else if / else ----------------------------------------------------
+
+let x = 5
+
+if (x > 10) {
+    log "big"
+} else if (x > 3) {
+    log "medium"
+} else {
+    log "small"
+}
+
+# Nested if
+if (x > 0) {
+    if (x % 2 == 0) {
+        log "positive even"
+    } else {
+        log "positive odd"
+    }
+}
+
+# --- while ------------------------------------------------------------------
+
+let i = 0
+while (i < 5) {
+    log "i = $i"
+    i++
+}
+
+# Infinite loop with break
+while (1) {
+    if (i >= 10) {
+        break
+    }
+    i++
+}
+
+# --- for --------------------------------------------------------------------
+# C-style:  for (init; condition; step) { body }
+#
+# Any of the three parts may be empty:
+#   for (;;) { }        — infinite loop (use break to exit)
+#   for (i = 0;; i++)   — no condition, infinite
+#   for (i = 0; i < 3;) — no step
+
+for (let j = 0; j < 3; j++) {
+    log "j = $j"
+}
+
+for (i = 0; i < 5; i++) {
+    if (i == 2) {
+        continue        # skip this iteration
+    }
+    if (i == 4) {
+        break           # exit the loop
+    }
+    log "body at i = $i"
+}
+
+# Nested loops
+for (let a = 0; a < 3; a++) {
+    for (let b = 0; b < 3; b++) {
+        if (a == b) {
+            continue
+        }
+        log "a=$a b=$b"
+    }
+}
+
+
+# =============================================================================
+# SECTION 8 — Built-in functions
+# =============================================================================
+#
+# These are available anywhere an expression is allowed (Style B).
+
+# --- expect("needle", ms) -> bool -------------------------------------------
+# See Section 3.
+
+if (expect("OK", 1000)) { log "ok" }
+
+# --- expect_search("needle", ms) -> bool ------------------------------------
+# See Section 3.
+
+if (expect_search("ERR", 1000)) { log "error found" }
+
+# --- assert_rx("needle") -> bool --------------------------------------------
+# See Section 3.
+
+if (assert_rx("ACK")) { log "ack present" }
+
+# --- num_from_rx(marker) -> int ---------------------------------------------
+# Reads the first number that follows `marker` in the RX buffer.
+#
+#   * If `marker` is non-empty: only text AFTER the marker is considered.
+#     If the marker is not found -> returns 0.
+#   * If `marker` is empty: returns the first number anywhere in the buffer.
+#   * If no number is found -> returns 0.
+#   * The fractional part is truncated: "23.9" -> 23.
+#
+# Example use:
+#     send "AT+READ\r\n"
+#     if (expect("OK", 2000)) {
+#         let temp = num_from_rx("TEMP=")
+#         let volt = num_from_rx("V=")
+#         log "temp=$temp volt=$volt"
+#     }
+
+# --- len(s) -> int ----------------------------------------------------------
+# Length of a string (number of characters).
+
+let L = len("hello")            # L == 5
+log "length = $L"
+
+# --- num(s) -> int ----------------------------------------------------------
+# Parse a string as an integer. Returns 0 on failure.
+# Accepts trailing junk after digits, and simple decimals: "42abc" -> 42,
+# "3.9" -> 3.
+
+let a = num("42")               # 42
+let b = num("42abc")            # 42
+let c = num("3.9")              # 3
+let d = num("nope")             # 0
+
+# --- str(v) -> string -------------------------------------------------------
+# Convert any value to its string form.
+
+let s1 = str(42)                # "42"
+let s2 = str("already a string")
+let s3 = str(n)                 # value of n as text
+
+# --- abs(n) -> int ----------------------------------------------------------
+# Absolute value.
+
+let av = abs(-7)                # 7
+
+# --- time_ms() -> int -------------------------------------------------------
+# Milliseconds elapsed since the script started.
+
+let t0 = time_ms()
+wait 100
+let elapsed = time_ms() - t0    # roughly 100
+log "waited $elapsed ms"
+
+
+# =============================================================================
+# SECTION 9 — A complete "realistic" example
+# =============================================================================
+#
+# Read a temperature sensor on 3 addresses, set a fan on any that reads
+# above 30. Uses almost everything from above.
+
+let base_addr = 1
+let bad = 0
+
+for (let k = 0; k < 3; k++) {
+    let addr = base_addr + k
+
+    send "AT+SELECT=$addr\r\n"
+    if (!expect("SEL OK", 2000)) {
+        log "address $addr did not select"
+        bad++
+        continue
+    }
+
+    send "AT+READ\r\n"
+    if (!expect("OK", 2000)) {
+        log "address $addr did not answer"
+        bad++
+        continue
+    }
+
+    let t = num_from_rx("TEMP=")
+    log "address $addr temperature = $t"
+
+    if (t > 30) {
+        send "AT+FAN=$addr=1\r\n"
+    } else {
+        send "AT+FAN=$addr=0\r\n"
+    }
+    wait 200
+}
+
+if (bad == 0) {
+    log "all addresses responded"
+} else {
+    log "$bad addresses failed"
+}
+
+
+# =============================================================================
+# SECTION 10 — Notes and gotchas
+# =============================================================================
+#
+# 1. Integer arithmetic only. There is no float type. If you need decimals,
+#    parse with num() and scale yourself (e.g. work in millivolts instead
+#    of volts).
+#
+# 2. $var is only valid INSIDE strings:
+#        log "value = $n"       — correct
+#        send "AT+SET=$n\r\n"   — correct
+#    Outside strings, use the bare variable name:
+#        print n                — correct
+#        let copy = n           — correct
+#        if (n > 5) { ... }     — correct
+#    These are PARSE ERRORS:
+#        print $n
+#        let copy = $n
+#        if ($n > 5) { ... }
+#
+# 3. Sending hex and other raw encodings uses the bracketed form:
+#        send[HEX] "AA 55 01 FF"     — correct
+#        send[BIN] "10101010"        — correct
+#        send[UTF-8] "текст"         — correct
+#    The old form  send HEX "..."  is NOT supported by the parser.
+#
+# 4. expect() and expect_search() differ only in what part of the RX buffer
+#    they look at. For simple request/response protocols, plain expect() is
+#    the right choice. Reach for expect_search() only when the device sends
+#    bursts that arrive before your expect call, or when you want to scan
+#    the whole log for an error marker.
+#
+# 5. `break` and `continue` are only valid inside loops. Using them outside
+#    a loop is a parse error.
+#
+# 6. A variable defined with `let` inside a loop keeps its value after the
+#    loop ends. There is no block scoping.
+#
+# 7. When a scenario runs, the macro buttons and the transmit input are
+#    disabled. You can stop it from the UI at any time; the script will
+#    emit "[SCENARIO] stopped" and clean up its timers.
+#
+# 8. RX bytes are decoded as UTF-8 with errors="replace". Binary payloads
+#    with non-UTF-8 sequences will show up as replacement characters in
+#    the scenario's view of the buffer, but the raw bytes are still
+#    delivered intact to the terminal and log — so if you are sending
+#    binary, use send[HEX] and don't rely on expect() matching raw bytes.
+#
+# 9. Long scenarios (> a few thousand instructions) are fine — parsing is
+#    one pass, execution is a flat PC + stack machine.
+#
+# =============================================================================
+# End of file
+# =============================================================================

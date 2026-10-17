@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>XYrminal — Benutzerhandbuch</title>
+<style>
+body { font-size: 13px; line-height: 1.5; }
+h2 { margin: 6px 0 10px 0; }
+h3 { margin: 18px 0 6px 0; }
+h4 { margin: 12px 0 4px 0; }
+ul { margin: 4px 0 8px 0; padding-left: 20px; }
+li { margin: 3px 0; }
+code { background: rgba(128,128,128,0.18); padding: 1px 5px; border-radius: 3px; }
+.kbd { background: rgba(128,128,128,0.25); padding: 1px 6px; border-radius: 3px;
+       font-family: Consolas, monospace; }
+table { border-collapse: collapse; margin: 6px 0 10px 0; }
+td { padding: 2px 10px 2px 0; vertical-align: top; }
+td.k { color: #9a93b5; white-space: nowrap; }
+pre { background: rgba(128,128,128,0.14); padding: 8px 10px; border-radius: 4px;
+      overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h2 style="color:#a855f7;">XYrminal — Benutzerhandbuch</h2>
+
+<p>XYrminal ist ein Multi-Protokoll-Terminal für die Kommunikation mit
+Geräten über seriell, TCP und UDP. Es arbeitet als Client oder Server,
+überträgt Dateien, zeichnet Live-Diagramme, führt Makros und Szenarien
+aus, hebt Teilstrings mit Triggern hervor und speichert alles auf der
+Festplatte.</p>
+
+<h3 style="color:#a855f7;">1. Tabs-Übersicht</h3>
+<ul>
+  <li><b>COM</b> — serieller Port (RS-232, RS-485, USB-CDC).</li>
+  <li><b>TCP Client</b> — Verbindung zu einem entfernten TCP-Server.</li>
+  <li><b>TCP Server</b> — auf einem lokalen Port lauschen, viele Clients.</li>
+  <li><b>UDP Client</b> — Senden/Empfangen an einen festen host:port.</li>
+  <li><b>UDP Server</b> — lokalen Port binden, Empfang von jedem, Broadcast.</li>
+</ul>
+
+<h3 style="color:#a855f7;">2. COM-Tab</h3>
+
+<h4>2.1 Verbindung</h4>
+<ul>
+  <li>Port in der Liste wählen; <b>Suchen</b> drücken, wenn die Liste
+      veraltet ist.</li>
+  <li><b>Verbinden</b> öffnet den Port, <b>Trennen</b> schließt ihn.</li>
+  <li>Wenn der Port geöffnet ist:
+      <ul>
+        <li><b>DTR</b> und <b>RTS</b> steuern die beiden Ausgangsleitungen.
+            DTR ist üblicherweise mit dem Reset-Pin des MCU verbunden,
+            RTS mit BOOT0 oder einem Bootloader-Enable-Pin. Ein Klick
+            schaltet die Leitung um, ohne den Port neu zu öffnen.</li>
+        <li>Vier LEDs zeigen die Eingangsleitungen: <b>CD</b>, <b>RI</b>,
+            <b>DSR</b>, <b>CTS</b>. Grün = Leitung aktiv, gedimmt =
+            inaktiv.</li>
+      </ul>
+  </li>
+</ul>
+
+<h4>2.2 Serielle Einstellungen</h4>
+<p>Baudrate, Datenbits, Parität, Stoppbits, Handshake. Jede Combo hat
+unten einen Eintrag <i>Benutzerdefiniert…</i> für Nicht-Standardwerte.</p>
+
+<h4>2.3 Terminal-Einstellungen</h4>
+<ul>
+  <li><b>Auto-Scroll</b> — springt nach unten, wenn neue Daten eintreffen.</li>
+  <li><b>Zeitstempel</b> — Präfix <code>[HH:MM:SS.mmm]</code> vor jeder
+      Zeile.</li>
+  <li><b>Auto-Speichern</b> — die aktuelle Sitzung wird während des
+      Betriebs direkt in eine Datei geschrieben.</li>
+  <li><b>Format</b> — wie eingehende Bytes dekodiert werden:
+      <ul>
+        <li>Raw: <b>HEX</b>, <b>DEC</b>, <b>OCT</b>, <b>BIN</b>.</li>
+        <li>Text: <b>ASCII</b>, <b>UTF-8</b>, <b>UTF-16 LE</b>, <b>UTF-16 BE</b>,
+            <b>CP1251</b>, <b>CP1252</b>, <b>CP866</b>, <b>KOI8-R</b>,
+            <b>Latin-1</b>, <b>Shift-JIS</b>, <b>GB2312</b>, <b>GBK</b>.</li>
+      </ul>
+      In Raw-Modi wird jeder empfangene Block sofort als eigenständige
+      Zeile ausgegeben. In Text-Modi werden Teilzeilen gepuffert, bis
+      ein Zeilenumbruch eintrifft <i>oder</i> 50 ms Stille vergehen —
+      Daten ohne abschließendes Newline werden trotzdem angezeigt
+      (Hercules-Style-Flush).</li>
+  <li><b>Diagramm</b> — Live-Diagramm-Panel öffnen (siehe Abschnitt 5).</li>
+  <li><b>Leeren</b> — Terminalausgabe löschen.</li>
+  <li><b>Protokoll speichern</b> — Puffer nach <code>logs/</code> schreiben.</li>
+</ul>
+
+<h4>2.4 Senden</h4>
+<ul>
+  <li>Text eingeben, <b>Enter</b> oder <b>Senden</b> drücken.
+      <span class="kbd">↑</span> / <span class="kbd">↓</span> — Verlauf.</li>
+  <li><b>HEX</b> — Eingabe als Hex-Bytes interpretieren ("AA BB CC" →
+      3 Bytes). Im HEX-Modus werden <i>+CR</i> und <i>CR=CR+LF</i>
+      ignoriert.</li>
+  <li><b>+CR</b> — Zeilenende anhängen. Mit <b>CR=CR+LF</b> wird daraus
+      <code>CR+LF</code>, sonst nur <code>CR</code>.</li>
+  <li><b>Makros</b> — siehe Abschnitt 7.</li>
+  <li><b>Dateiübertragung</b> — siehe Abschnitt 6.</li>
+</ul>
+
+<h3 style="color:#a855f7;">3. TCP / UDP-Client-Tabs</h3>
+<ul>
+  <li><b>Verbindung</b> — Remote-Host / -Port, optionaler lokaler Bind,
+      Timeout.</li>
+  <li><b>Verbindung halten</b> (nur TCP Client) — wenn der Peer die
+      Verbindung fallen lässt, versucht der Worker alle 2 Sekunden
+      erneut, bis er sich wieder verbindet oder Sie „Trennen“ drücken.</li>
+  <li><b>Ping</b> — TCP-connect()-Prüfung mit denselben Statistiken wie
+      PowerShells Test-Connection: <b>Prüfen</b> startet eine feste
+      Serie, <b>Start</b> startet ein periodisches Ping, <b>Stopp</b>
+      beendet es.</li>
+</ul>
+
+<h3 style="color:#a855f7;">4. TCP / UDP-Server-Tabs</h3>
+<ul>
+  <li><b>TCP Server</b> — lauschen, Client-Liste, optionales <b>Echo</b>,
+      optionales <b>Broadcast an alle</b>, einzelnen oder alle Peers
+      trennen.</li>
+  <li><b>UDP Server</b> — bind, Empfang von jedem, letzten Absender
+      merken, an letzteren / an explizite Adresse / an 255.255.255.255
+      antworten.</li>
+  <li>Eingehende Daten erhalten ein Präfix <code>[host:port]</code>.
+      Server-Ereignisse (<code>[+]</code>, <code>[-]</code>, lauschend,
+      gestoppt) haben eine eigene Farbe.</li>
+</ul>
+
+<h3 style="color:#a855f7;">5. Live-Diagramm</h3>
+<p><b>Diagramm</b> in „Terminal-Einstellungen“ drücken. Der Terminal-
+Bereich teilt sich in zwei: Text links, Live-Diagramm rechts.</p>
+<ul>
+  <li>Jede Zeile = eine Variable: <b>Name</b> + <b>Parser-Marker</b>.
+      Name erforderlich, Marker optional.
+      <ul>
+        <li>Mit Marker (z. B. <code>VREF=</code>): der Parser sucht den
+            Marker im eingehenden Text und liest die erste Zahl danach.</li>
+        <li>Ohne Marker: der Parser liest die erste Zahl irgendwo im
+            eingehenden Block.</li>
+      </ul>
+  </li>
+  <li>Mehrere Zeilen = mehrere Linien im selben Diagramm, jede mit
+      eigener Farbe.</li>
+  <li><b>Start</b> beginnt die Erfassung. <b>Pause / Fortsetzen</b>
+      friert die Erfassung ohne Datenverlust ein. <b>Stopp</b> beendet
+      die Sitzung und schließt das Panel.</li>
+  <li><b>T-Mode</b> — die X-Achse wird zu <i>Sekunden zurück</i> statt
+      Sample-Index. Das Diagramm scrollt kontinuierlich auch ohne neue
+      Daten.</li>
+  <li><b>View</b> — wie viele Punkte (Index-Modus) oder Sekunden
+      (T-Mode) im Fenster sichtbar sind.</li>
+  <li><b>Export CSV</b> — alle erfassten Kanäle als
+      tabellenkalkulationsfreundliche CSV-Datei speichern:
+      <code>index,time_s,&lt;kanal1&gt;,&lt;kanal2&gt;,…</code>.
+      Fehlende Werte am Ende bleiben als leere Zellen. UTF-8 mit BOM,
+      damit Excel kyrillische Kanalnamen korrekt öffnet.</li>
+  <li>Mit der Maus über das Diagramm fahren, um einen Tooltip mit dem
+      genauen Wert zu sehen.</li>
+</ul>
+
+<h3 style="color:#a855f7;">6. Dateiübertragung</h3>
+<ul>
+  <li>Verfügbar in den Tabs COM, TCP Client und UDP Client.</li>
+  <li>Protokolle:
+      <ul>
+        <li><b>Raw</b> — Datei als Rohbyte-Blöcke mit konfigurierbarer
+            Zwischenblock-Verzögerung. Gut für Bootloader, Images,
+            Konfigs.</li>
+        <li><b>XMODEM</b> — klassische 128-Byte-Blöcke mit CRC-16,
+            ACK/NAK-Handshake, bis zu 10 Wiederholungen pro Block.</li>
+        <li><b>YMODEM</b> — XMODEM-1K mit einem ersten Block „Dateiname +
+            Größe“. Standard für STM32 / ESP / AVR Bootloader.</li>
+        <li><b>ZMODEM</b> — noch nicht implementiert.</li>
+      </ul>
+  </li>
+  <li>Blockgröße, Blockverzögerung und maximale Dateigröße werden in
+      <i>Einstellungen → Übertragungseinstellungen</i> konfiguriert.
+      Dort kann auch <b>Zuletzt gesendete Datei merken</b> aktiviert
+      werden, damit Pfad und Protokoll beim nächsten Start
+      wiederhergestellt werden.</li>
+  <li>XMODEM / YMODEM / ZMODEM sind über UDP nicht verfügbar.</li>
+</ul>
+
+<h3 style="color:#a855f7;">7. Makros und Szenarien</h3>
+<p>Jeder Tab hat 10 Slots, M1…M10. Jeder Slot kann entweder ein einfaches
+Makro oder ein Szenario-Skript enthalten.</p>
+
+<h4>7.1 Einfaches Makro</h4>
+<ul>
+  <li>Kurzer Text (oder Hex-Bytes), per Klick gesendet.</li>
+  <li>Jedes Makro hat eigene <b>+CR</b>, <b>CR=CR+LF</b> und <b>HEX</b>
+      Flags — unabhängig von denen über dem Eingabefeld.</li>
+  <li>Über die Schaltfläche fahren, um die Nutzlast zu sehen. Leere
+      Slots sind deaktiviert.</li>
+</ul>
+
+<h4>7.2 Szenario-Skript (.xyscen)</h4>
+<p>Eine einfache UTF-8-Textdatei mit einem Befehl pro Zeile. Befehle
+gibt es in zwei Stilen, die im selben File frei gemischt werden
+können:</p>
+
+<p><b>Stil A — flach, ein Befehl pro Zeile</b> (die ursprüngliche
+Syntax, weiterhin voll unterstützt):</p>
+<pre># Kommentar
+// auch ein Kommentar
+send "AT+RST\r\n"
+send HEX "AA 55 01 FF"
+wait 3000
+expect "OK" 2000
+expect_search "ERROR" 3000
+assert_rx "READY"
+log "hallo"
+let x = 5
+send "AT+SET=$x\r\n"</pre>
+
+<p><b>Stil B — Mini-Sprache mit C-artigen Blöcken</b> (Variablen,
+Ausdrücke, if/else, while, for):</p>
+<pre>let id = 3
+let ok = 0
+
+for (let i = 0; i &lt; id; i++) {
+    send "AT+PING\r\n"
+    if (expect("PONG", 2000)) {
+        ok++
+    } else {
+        log "Gerät $i antwortete nicht"
+    }
+    wait 200
+}
+
+if (ok == id) {
+    log "alle $id ok"
+} else {
+    log "$ok / $id ok"
+}</pre>
+
+<p>Beide Stile lassen sich mischen. Alte Skripte in der ursprünglichen
+Syntax funktionieren unverändert weiter.</p>
+
+<h4>7.3 Befehlsreferenz</h4>
+
+<p><b>Daten senden</b></p>
+<ul>
+  <li><code>send "Text"</code> — Zeichenkette senden (UTF-8). Escapes:
+      <code>\r \n \t \\ \" \' \0 \xNN</code>.</li>
+  <li><code>send HEX "AA 55 01 FF"</code> — alter Alias, sendet rohe
+      Hex-Bytes.</li>
+  <li><code>send[ENC] "Text"</code> — wie <code>send</code>, aber mit
+      expliziter Kodierung. Unterstützte ENC:
+      <ul>
+        <li>Raw: <b>HEX</b> ("AA 55"), <b>BIN</b> ("10101010 01010101"),
+            <b>DEC</b> ("170 85"), <b>OCT</b> ("252 125").</li>
+        <li>Text: <b>UTF-8</b>, <b>ASCII</b>, <b>UTF-16LE</b>,
+            <b>UTF-16BE</b>, <b>CP1251</b>, <b>CP1252</b>, <b>CP866</b>,
+            <b>KOI8-R</b>, <b>Latin-1</b>, <b>Shift-JIS</b>, <b>GB2312</b>,
+            <b>GBK</b>.</li>
+      </ul>
+  </li>
+  <li><code>send_slow[ENC] "Text" ms</code> — Byte für Byte mit
+      Verzögerung <i>ms</i> zwischen den Bytes. Für langsame MCU-UARTs.
+      Ohne <code>[ENC]</code> wird UTF-8 verwendet.</li>
+</ul>
+
+<p><b>Warten und Prüfen</b></p>
+<ul>
+  <li><code>wait ms</code> — Pause für die angegebene Anzahl Millisekunden.</li>
+  <li><code>expect "Text" ms</code> — bis zu <i>ms</i> auf <i>Text</i> in
+      RX warten. Nur Bytes <i>nach</i> dem Aufruf werden berücksichtigt.
+      Bei Timeout schlägt das Skript fehl.</li>
+  <li><code>expect_search "Text" ms</code> — wie oben, aber sucht im
+      <i>gesamten</i> seit Skriptstart gesammelten RX-Puffer. Nützlich,
+      wenn das Gerät den Text schon vor dem Warten gesendet hat.</li>
+  <li><code>assert_rx "Text"</code> — prüfen, dass <i>Text</i> bereits
+      im RX-Puffer liegt. Sofort, ohne Warten.</li>
+  <li>In Ausdrucksform (Stil B) liefern <code>expect(...)</code>,
+      <code>expect_search(...)</code> und <code>assert_rx(...)</code>
+      einen Bool und brechen das Skript bei Misserfolg nicht ab. Ideal
+      für <code>if (...)</code>.</li>
+</ul>
+
+<p><b>Variablen und Ausgabe</b></p>
+<ul>
+  <li><code>let name = wert</code> — Variable definieren. Wert kann eine
+      Zahl, ein String in Anführungszeichen oder <code>$andere</code>
+      (Referenz) sein.</li>
+  <li>In jedem String kann <code>$name</code> verwendet werden, um den
+      Wert einer Variable einzusetzen:
+      <code>send "AT+SET=$id\r\n"</code>.</li>
+  <li><code>log "Text"</code> — Zeile als <code>[SCENARIO] Text</code> ins
+      Terminal drucken. Interpoliert <code>$var</code>.</li>
+  <li><code>print Ausdruck</code> — Wert eines beliebigen Ausdrucks
+      drucken.</li>
+</ul>
+
+<p><b>Kontrollfluss (Stil B)</b></p>
+<ul>
+  <li><code>if (Bedingung) { ... } else if (Bedingung) { ... } else { ... }</code>.</li>
+  <li><code>while (Bedingung) { ... }</code>.</li>
+  <li><code>for (init; cond; step) { ... }</code>.</li>
+  <li><code>break</code> / <code>continue</code> innerhalb von Schleifen.</li>
+</ul>
+
+<p><b>Operatoren (Stil B)</b></p>
+<ul>
+  <li>Arithmetik: <code>+ - * / %</code>.</li>
+  <li>Vergleich: <code>== != &lt; &gt; &lt;= &gt;=</code>.</li>
+  <li>Logik: <code>&amp;&amp; || !</code> (mit Kurzschluss).</li>
+  <li>Inkrement / Dekrement: <code>x++</code>, <code>x--</code>.</li>
+  <li>Zusammengesetzte Zuweisung: <code>+= -= *= /= %=</code>.</li>
+</ul>
+
+<p><b>Eingebaute Funktionen</b></p>
+<table>
+  <tr><td class="k"><code>expect("needle", ms)</code></td>
+      <td>bool — siehe oben.</td></tr>
+  <tr><td class="k"><code>expect_search("needle", ms)</code></td>
+      <td>bool — siehe oben.</td></tr>
+  <tr><td class="k"><code>assert_rx("needle")</code></td>
+      <td>bool — sofortige Prüfung des gesamten RX-Puffers.</td></tr>
+  <tr><td class="k"><code>num_from_rx(marker)</code></td>
+      <td>int — erste Zahl nach <i>marker</i> im RX-Puffer. Leerer
+          <i>marker</i> → erste Zahl im gesamten Puffer. 0 bei
+          Nichtfund. Nachkommateil wird abgeschnitten (nur int).</td></tr>
+  <tr><td class="k"><code>len(s)</code></td>
+      <td>int — Länge einer Zeichenkette.</td></tr>
+  <tr><td class="k"><code>num(s)</code></td>
+      <td>int — Zahl parsen; 0, wenn nicht numerisch.</td></tr>
+  <tr><td class="k"><code>str(v)</code></td>
+      <td>string — Wert in Text umwandeln.</td></tr>
+  <tr><td class="k"><code>abs(n)</code></td>
+      <td>int — Absolutwert.</td></tr>
+  <tr><td class="k"><code>time_ms()</code></td>
+      <td>int — Millisekunden seit Skriptstart.</td></tr>
+</table>
+
+<h4>7.4 Realistisches Beispiel</h4>
+<pre># Temperatur lesen und Lüfter umschalten
+send "AT+READ\r\n"
+
+if (expect("OK", 2000)) {
+    let t = num_from_rx("TEMP=")
+    log "Temperatur = $t"
+    if (t &gt; 30) {
+        send "AT+FAN=1\r\n"
+    } else {
+        send "AT+FAN=0\r\n"
+    }
+} else {
+    log "Gerät hat nicht geantwortet"
+}</pre>
+
+<h4>7.5 Slots konfigurieren</h4>
+<ul>
+  <li><b>Einstellungen → Makros konfigurieren → &lt;Tab&gt;</b> öffnet
+      einen Dialog mit 10 Zeilen: Textfeld + <b>+CR</b> + <b>CR=CR+LF</b> +
+      <b>HEX</b>.</li>
+  <li>Schaltflächen oben:
+      <ul>
+        <li><b>Szenario hinzufügen…</b> — eine <code>.xyscen</code>-Datei
+            und eine Slot-Nummer wählen. Die Slot-Schaltfläche wird zu
+            <b>S#</b>.</li>
+        <li><b>Szenario entfernen</b> — den Slot wieder in ein einfaches
+            Makro umwandeln.</li>
+      </ul>
+  </li>
+  <li><b>Einstellungen → Alle Makros zurücksetzen → …</b> löscht Makros
+      eines Tabs oder aller auf einmal.</li>
+  <li>Während ein Szenario läuft, sind alle Makros und die Eingabezeile
+      deaktiviert. Der Fortschritt wird als
+      <code>[SCENARIO] …</code>-Zeilen in eigener Farbe ausgegeben.</li>
+</ul>
+
+<h3 style="color:#a855f7;">8. Trigger</h3>
+<p>Jeder Tab kann Teilstrings in der Terminalausgabe mit benutzerdefinierter
+Text- und Hintergrundfarbe hervorheben.</p>
+<ul>
+  <li><b>Einstellungen → Trigger konfigurieren → &lt;Tab&gt;</b> öffnet
+      einen Dialog.</li>
+  <li>Jede Zeile: Text zum Abgleich + Vordergrund-Swatch + Hintergrund-Swatch.</li>
+  <li>Abgleich ist Groß-/Kleinschreibung-unabhängig; obere Zeilen gewinnen
+      bei Überlappung.</li>
+  <li>Bis zu 50 Trigger pro Tab.</li>
+  <li>Trigger werden auch in <code>.xyrmc</code>-Protokollen gespeichert,
+      damit ein Browser dieselbe Hervorhebung rendert.</li>
+  <li><b>Einstellungen → Trigger zurücksetzen → &lt;Tab&gt; / Alle</b>
+      löscht sie.</li>
+</ul>
+
+<h3 style="color:#a855f7;">9. Protokolle</h3>
+<ul>
+  <li><b>Protokoll speichern</b> — aktuellen Puffer in <code>logs/</code>
+      neben der App mit automatisch generiertem Namen speichern.</li>
+  <li><b>Protokoll speichern unter…</b> — Pfad und Format wählen:
+      <ul>
+        <li><b>.xyrm</b> — reiner UTF-8-Text.</li>
+        <li><b>.xyrmc</b> — vollständiges HTML-Dokument mit Inline-Farben.
+            In jedem Browser öffnen, um das Terminal exakt wie zuvor zu
+            sehen, inklusive Trigger-Hervorhebungen.</li>
+      </ul>
+  </li>
+  <li><b>Protokoll öffnen…</b> — ein zuvor gespeichertes Protokoll öffnen:
+      <ul>
+        <li><code>.xyrm</code> — in das Terminal des aktuellen Tabs geladen.</li>
+        <li><code>.xyrmc</code> — öffnet ein separates Viewer-Fenster mit
+            <b>Play / Pause / Stop</b>-Toolbar, das das Protokoll mit
+            den ursprünglichen Zeilenabständen wiedergibt.</li>
+      </ul>
+  </li>
+  <li><b>Protokollordner öffnen</b> — <code>logs/</code> im Dateimanager
+      öffnen.</li>
+</ul>
+
+<h3 style="color:#a855f7;">10. Einstellungsmenü</h3>
+<table>
+  <tr><td class="k"><b>Design</b></td>
+      <td>10 eingebaute Paletten, „System“ (folgt dem OS-Schema),
+          „Benutzerdefiniert…“ (eigener Paletteneditor) und „Zufällig“
+          (sofortige Erzeugung einer Zufallspalette). Benutzerdefinierte
+          Paletten werden in QSettings gespeichert.</td></tr>
+  <tr><td class="k"><b>Textfarbe des Terminals</b></td>
+      <td>Jede Ausgabekategorie einzeln einfärben oder auf das aktuelle
+          Design zurücksetzen. 16 benannte Farben. Eine Farbe, die
+          bereits von einer anderen Kategorie verwendet wird, ist
+          deaktiviert, um Konflikte zu vermeiden.</td></tr>
+  <tr><td class="k"><b>Sprache</b></td>
+      <td>Die Oberflächensprache im laufenden Betrieb umschalten.
+          Englisch, Russisch, Belarussisch, Deutsch, Französisch,
+          Chinesisch, Japanisch, Koreanisch.</td></tr>
+  <tr><td class="k"><b>UI-Skalierung</b></td>
+      <td>75 % / 100 % / 125 % / 150 %. Skaliert Schriften, Abstände,
+          Steuerelementgrößen und die minimale Fenstergröße. Die Auswahl
+          wird gespeichert.</td></tr>
+  <tr><td class="k"><b>Makros konfigurieren</b></td>
+      <td>Die 10 Makro-Slots pro Tab bearbeiten.</td></tr>
+  <tr><td class="k"><b>Alle Makros zurücksetzen</b></td>
+      <td>Makros eines Tabs oder aller auf einmal löschen.</td></tr>
+  <tr><td class="k"><b>Trigger konfigurieren</b></td>
+      <td>Die Trigger-Liste pro Tab bearbeiten.</td></tr>
+  <tr><td class="k"><b>Trigger zurücksetzen</b></td>
+      <td>Trigger eines Tabs oder aller auf einmal löschen.</td></tr>
+  <tr><td class="k"><b>Übertragungseinstellungen</b></td>
+      <td>Blockgröße / Blockverzögerung / maximale Dateigröße für die
+          Dateiübertragung, plus „Zuletzt gesendete Datei merken“.</td></tr>
+  <tr><td class="k"><b>Speicherformat</b></td>
+      <td>Reiner Text (<code>.xyrm</code>) oder farbiges HTML
+          (<code>.xyrmc</code>).</td></tr>
+</table>
+
+<h3 style="color:#a855f7;">11. Ansicht-Menü</h3>
+<ul>
+  <li>Einzelne Gruppen des aktuellen Tabs ein- oder ausblenden
+      (Verbindung, Serielle Einstellungen, Terminal-Einstellungen,
+      Server, Ping).</li>
+  <li><b>Alle anzeigen</b> — alle Gruppen des aktuellen Tabs anzeigen.</li>
+  <li><b>Alle ausblenden</b> — alle Gruppen des aktuellen Tabs ausblenden.</li>
+</ul>
+
+<h3 style="color:#a855f7;">12. Tastaturkürzel</h3>
+<ul>
+  <li><span class="kbd">Ctrl+F</span> — im Terminal suchen.</li>
+  <li><span class="kbd">F3</span> / <span class="kbd">Shift+F3</span> —
+      nächster / vorheriger Treffer.</li>
+  <li><span class="kbd">Enter</span> im Sende-Eingabefeld — senden.</li>
+  <li><span class="kbd">↑</span> / <span class="kbd">↓</span> im
+      Sende-Eingabefeld — Befehlsverlauf.</li>
+  <li><span class="kbd">Esc</span> — Suchfeld schließen.</li>
+</ul>
+
+<h3 style="color:#a855f7;">13. Was gespeichert wird</h3>
+<p>Beim Beenden speichert die App Fenstergeometrie, aktiven Tab,
+COM-Einstellungen, TCP / UDP-Einstellungen, Ping-Einstellungen,
+Terminal- und Sende-Toggles, Gruppensichtbarkeit, Design (inklusive
+benutzerdefinierter Palette), UI-Skalierung, Sprache, Terminalfarben,
+Speicherformat, alle Makros und alle Trigger sowie den zuletzt
+gesendeten Dateipfad, wenn „Zuletzt gesendete Datei merken“ aktiviert
+ist. Beim nächsten Start wird alles wiederhergestellt.</p>
+
+<h3 style="color:#a855f7;">14. Designs-Übersicht</h3>
+<ul>
+  <li><b>System</b> — folgt dem OS-Farbschema (dunkel → Black,
+      hell → White).</li>
+  <li><b>Purple</b>, <b>Gray</b>, <b>White</b>, <b>Black</b>, <b>Beige</b> —
+      Einfarbige Paletten. Akzente (Tabs, Schaltflächen, Gruppentitel,
+      Hervorhebungen) verwenden die Designfarbe, Hintergründe sind ein
+      dunkler Ton davon. Rote und grüne semantische Schaltflächen
+      bleiben unabhängig vom Design rot und grün.</li>
+  <li><b>Turquoise-Orange</b>, <b>Graphite-Sand</b>, <b>Purple-Gold</b>,
+      <b>Coral-Mint</b>, <b>Navy-Crimson</b> — Zweifarbige Paletten.
+      Der Hintergrund verwendet die erste Farbe, Akzente die zweite.</li>
+  <li><b>Benutzerdefiniert…</b> — benutzerdefinierte Palette. Jede der
+      20 Farbrollen über einen Farbwähler bearbeiten. Schaltflächen:
+      <ul>
+        <li><b>Random</b> — erzeugt eine harmonische Zufallspalette.</li>
+        <li><b>Reset to defaults</b> — zurück zum eingebauten Violett.</li>
+      </ul>
+  </li>
+  <li><b>Zufällig</b> (im Menü) — erzeugt und wendet sofort eine
+      zufällige benutzerdefinierte Palette an.</li>
+</ul>
+
+</body>
+</html>

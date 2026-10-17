@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>XYrminal log</title>
+<style>
+  body { background: #161320; color: #e6e1f5; font-family: Consolas, Menlo, 'DejaVu Sans Mono', monospace; font-size: 12px; margin: 12px; }
+  pre { margin: 0; white-space: pre-wrap; word-break: break-all; }
+</style>
+</head>
+<body>
+<pre>
+<span style="color:#a855f7">[13:35:32.722] </span><span style="color:#f1c40f">[TCP Server] listening on 0.0.0.0:5000</span>
+<span style="color:#a855f7">[13:35:50.934] </span><span style="color:#f1c40f">[+] 127.0.0.1:53268</span>
+<span style="color:#a855f7">[13:35:50.935] </span><span style="color:#f1c40f">[+] 127.0.0.1:58529</span>
+<span style="color:#a855f7">[13:35:50.944] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:50.945] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:50.945] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:50.946] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:50.947] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:50.947] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:50.948] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:50.948] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:50.949] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:50.950] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Sec-Fetch-Site: none</span>
+<span style="color:#a855f7">[13:35:50.951] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:50.952] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:50.953] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:50.955] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:50.956] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:50.957] </span><span style="color:#a855f7">[127.0.0.1:53268] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:50.978] </span><span style="color:#f1c40f">[-] 127.0.0.1:53268</span>
+<span style="color:#a855f7">[13:35:52.050] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:52.051] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:52.052] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:52.053] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:52.053] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:52.054] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:52.055] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:52.055] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:52.056] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:52.056] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.057] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Sec-Fetch-Site: none</span>
+<span style="color:#a855f7">[13:35:52.057] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:52.058] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:52.058] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:52.058] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:52.059] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.059] </span><span style="color:#a855f7">[127.0.0.1:58529] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:52.060] </span><span style="color:#f1c40f">[+] 127.0.0.1:49300</span>
+<span style="color:#a855f7">[13:35:52.068] </span><span style="color:#f1c40f">[-] 127.0.0.1:58529</span>
+<span style="color:#a855f7">[13:35:52.075] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:52.076] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:52.076] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:52.076] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:52.077] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:52.077] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:52.077] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:52.078] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:52.078] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:52.079] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.079] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Sec-Fetch-Site: none</span>
+<span style="color:#a855f7">[13:35:52.080] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:52.080] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:52.080] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:52.081] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:52.081] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.082] </span><span style="color:#a855f7">[127.0.0.1:49300] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:52.112] </span><span style="color:#f1c40f">[-] 127.0.0.1:49300</span>
+<span style="color:#a855f7">[13:35:52.112] </span><span style="color:#f1c40f">[+] 127.0.0.1:56524</span>
+<span style="color:#a855f7">[13:35:52.116] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:52.118] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:52.118] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:52.119] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:52.120] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:52.121] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:52.121] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:52.122] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:52.122] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:52.122] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.123] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Sec-Fetch-Site: none</span>
+<span style="color:#a855f7">[13:35:52.123] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:52.124] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:52.124] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:52.124] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:52.125] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:52.125] </span><span style="color:#a855f7">[127.0.0.1:56524] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:52.148] </span><span style="color:#f1c40f">[-] 127.0.0.1:56524</span>
+<span style="color:#a855f7">[13:35:54.794] </span><span style="color:#f1c40f">[+] 127.0.0.1:60129</span>
+<span style="color:#a855f7">[13:35:54.801] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:54.803] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:54.804] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:54.805] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:54.806] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:54.806] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:54.806] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:54.807] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:54.807] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:54.808] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:54.808] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:54.809] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:54.809] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:54.809] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:54.810] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:54.810] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:54.810] </span><span style="color:#a855f7">[127.0.0.1:60129] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:54.811] </span><span style="color:#f1c40f">[+] 127.0.0.1:57816</span>
+<span style="color:#a855f7">[13:35:54.849] </span><span style="color:#f1c40f">[-] 127.0.0.1:60129</span>
+<span style="color:#a855f7">[13:35:55.538] </span><span style="color:#f1c40f">[+] 127.0.0.1:50628</span>
+<span style="color:#a855f7">[13:35:55.539] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:55.540] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:55.540] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:55.540] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:55.541] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:55.542] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:55.542] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:55.543] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:55.543] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:55.545] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.546] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:55.547] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:55.547] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:55.547] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:55.548] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:55.548] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.548] </span><span style="color:#a855f7">[127.0.0.1:57816] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:55.576] </span><span style="color:#f1c40f">[-] 127.0.0.1:57816</span>
+<span style="color:#a855f7">[13:35:55.577] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:55.577] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:55.577] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:55.578] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:55.579] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:55.579] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:55.580] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:55.580] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:55.581] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:55.581] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.582] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:55.582] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:55.583] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:55.585] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:55.587] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:55.588] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.588] </span><span style="color:#a855f7">[127.0.0.1:50628] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:55.609] </span><span style="color:#f1c40f">[-] 127.0.0.1:50628</span>
+<span style="color:#a855f7">[13:35:55.609] </span><span style="color:#f1c40f">[+] 127.0.0.1:59081</span>
+<span style="color:#a855f7">[13:35:55.612] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:55.613] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:55.614] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:55.614] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:55.614] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:55.615] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:55.615] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:55.616] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:55.616] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:55.617] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.618] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:55.619] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:55.620] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:55.620] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:55.621] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:55.621] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:55.621] </span><span style="color:#a855f7">[127.0.0.1:59081] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:55.643] </span><span style="color:#f1c40f">[-] 127.0.0.1:59081</span>
+<span style="color:#a855f7">[13:35:57.630] </span><span style="color:#f1c40f">[+] 127.0.0.1:53178</span>
+<span style="color:#a855f7">[13:35:57.638] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:57.639] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:57.640] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:57.640] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:57.641] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:57.642] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:57.643] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:57.643] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:57.644] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:57.644] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:57.645] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:57.645] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:57.646] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:57.646] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:57.646] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:57.647] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:57.647] </span><span style="color:#a855f7">[127.0.0.1:53178] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:57.648] </span><span style="color:#f1c40f">[+] 127.0.0.1:54547</span>
+<span style="color:#a855f7">[13:35:57.690] </span><span style="color:#f1c40f">[-] 127.0.0.1:53178</span>
+<span style="color:#a855f7">[13:35:58.504] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:58.505] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:58.505] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:58.507] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:58.508] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:58.508] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:58.509] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:58.510] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:58.511] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:58.511] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.512] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:58.512] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:58.513] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:58.513] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:58.513] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:58.514] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.514] </span><span style="color:#a855f7">[127.0.0.1:54547] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:58.515] </span><span style="color:#f1c40f">[+] 127.0.0.1:57681</span>
+<span style="color:#a855f7">[13:35:58.538] </span><span style="color:#f1c40f">[-] 127.0.0.1:54547</span>
+<span style="color:#a855f7">[13:35:58.539] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:58.539] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:58.539] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:58.540] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:58.540] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:58.541] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:58.541] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:58.541] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:58.542] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:58.542] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.543] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:58.543] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:58.544] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:58.544] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:58.544] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:58.545] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.545] </span><span style="color:#a855f7">[127.0.0.1:57681] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:58.567] </span><span style="color:#f1c40f">[-] 127.0.0.1:57681</span>
+<span style="color:#a855f7">[13:35:58.568] </span><span style="color:#f1c40f">[+] 127.0.0.1:60564</span>
+<span style="color:#a855f7">[13:35:58.574] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:58.575] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:58.575] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:58.575] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:58.576] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:58.576] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:58.576] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:58.577] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:58.577] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:58.578] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.578] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:58.579] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:58.579] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:58.579] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:58.580] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:58.580] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:58.580] </span><span style="color:#a855f7">[127.0.0.1:60564] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:58.603] </span><span style="color:#f1c40f">[-] 127.0.0.1:60564</span>
+<span style="color:#a855f7">[13:35:59.396] </span><span style="color:#f1c40f">[+] 127.0.0.1:53356</span>
+<span style="color:#a855f7">[13:35:59.403] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:35:59.403] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:35:59.404] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:35:59.407] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:35:59.408] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:35:59.408] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:35:59.409] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:35:59.409] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:35:59.410] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:35:59.410] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:35:59.411] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:35:59.411] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:35:59.412] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:35:59.412] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:35:59.413] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:35:59.413] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:35:59.413] </span><span style="color:#a855f7">[127.0.0.1:53356] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:35:59.414] </span><span style="color:#f1c40f">[+] 127.0.0.1:50238</span>
+<span style="color:#a855f7">[13:35:59.448] </span><span style="color:#f1c40f">[-] 127.0.0.1:53356</span>
+<span style="color:#a855f7">[13:36:00.186] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:00.187] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:00.187] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:00.188] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:00.188] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:00.189] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:00.190] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:00.190] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:00.191] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:00.192] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.194] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:00.194] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:00.195] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:00.195] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:00.196] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:00.196] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.196] </span><span style="color:#a855f7">[127.0.0.1:50238] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:00.197] </span><span style="color:#f1c40f">[+] 127.0.0.1:54114</span>
+<span style="color:#a855f7">[13:36:00.217] </span><span style="color:#f1c40f">[-] 127.0.0.1:50238</span>
+<span style="color:#a855f7">[13:36:00.219] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:00.220] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:00.221] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:00.221] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:00.222] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:00.222] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:00.223] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:00.223] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:00.223] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:00.224] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.224] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:00.225] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:00.225] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:00.226] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:00.226] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:00.226] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.227] </span><span style="color:#a855f7">[127.0.0.1:54114] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:00.248] </span><span style="color:#f1c40f">[-] 127.0.0.1:54114</span>
+<span style="color:#a855f7">[13:36:00.249] </span><span style="color:#f1c40f">[+] 127.0.0.1:49807</span>
+<span style="color:#a855f7">[13:36:00.256] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:00.257] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:00.257] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:00.257] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:00.258] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:00.258] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:00.258] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:00.259] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:00.259] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:00.260] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.260] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:00.261] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:00.261] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:00.261] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:00.262] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:00.262] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:00.262] </span><span style="color:#a855f7">[127.0.0.1:49807] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:00.288] </span><span style="color:#f1c40f">[-] 127.0.0.1:49807</span>
+<span style="color:#a855f7">[13:36:01.027] </span><span style="color:#f1c40f">[+] 127.0.0.1:61735</span>
+<span style="color:#a855f7">[13:36:01.029] </span><span style="color:#f1c40f">[+] 127.0.0.1:63150</span>
+<span style="color:#a855f7">[13:36:01.033] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:01.034] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:01.034] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:01.034] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:01.035] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:01.035] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:01.036] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:01.036] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:01.037] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:01.037] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.038] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:01.039] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:01.039] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:01.040] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:01.041] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:01.041] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.042] </span><span style="color:#a855f7">[127.0.0.1:61735] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:01.065] </span><span style="color:#f1c40f">[-] 127.0.0.1:61735</span>
+<span style="color:#a855f7">[13:36:01.856] </span><span style="color:#f1c40f">[+] 127.0.0.1:54556</span>
+<span style="color:#a855f7">[13:36:01.857] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:01.857] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:01.858] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:01.858] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:01.859] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:01.859] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:01.860] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:01.861] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:01.861] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:01.862] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.864] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:01.864] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:01.865] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:01.865] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:01.866] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:01.867] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.868] </span><span style="color:#a855f7">[127.0.0.1:63150] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:01.888] </span><span style="color:#f1c40f">[-] 127.0.0.1:63150</span>
+<span style="color:#a855f7">[13:36:01.889] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:01.889] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:01.890] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:01.890] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:01.891] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:01.892] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:01.892] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:01.893] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:01.893] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:01.894] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.894] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:01.895] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:01.895] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:01.895] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:01.896] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:01.896] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.896] </span><span style="color:#a855f7">[127.0.0.1:54556] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:01.920] </span><span style="color:#f1c40f">[-] 127.0.0.1:54556</span>
+<span style="color:#a855f7">[13:36:01.921] </span><span style="color:#f1c40f">[+] 127.0.0.1:56124</span>
+<span style="color:#a855f7">[13:36:01.925] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:01.926] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:01.926] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:01.927] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:01.927] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:01.928] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:01.928] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:01.928] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:01.929] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:01.929] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.930] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:01.930] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:01.931] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:01.931] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:01.931] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:01.932] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:01.932] </span><span style="color:#a855f7">[127.0.0.1:56124] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:01.955] </span><span style="color:#f1c40f">[-] 127.0.0.1:56124</span>
+<span style="color:#a855f7">[13:36:02.554] </span><span style="color:#f1c40f">[+] 127.0.0.1:50842</span>
+<span style="color:#a855f7">[13:36:02.560] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:02.560] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:02.561] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:02.562] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:02.563] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:02.563] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:02.564] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:02.564] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:02.565] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:02.565] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:02.566] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:02.568] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:02.569] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:02.570] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:02.570] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:02.571] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:02.571] </span><span style="color:#a855f7">[127.0.0.1:50842] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:02.572] </span><span style="color:#f1c40f">[+] 127.0.0.1:49982</span>
+<span style="color:#a855f7">[13:36:02.601] </span><span style="color:#f1c40f">[-] 127.0.0.1:50842</span>
+<span style="color:#a855f7">[13:36:06.134] </span><span style="color:#f1c40f">[-] 127.0.0.1:49982</span>
+<span style="color:#a855f7">[13:36:07.632] </span><span style="color:#f1c40f">[+] 127.0.0.1:54549</span>
+<span style="color:#a855f7">[13:36:07.633] </span><span style="color:#f1c40f">[+] 127.0.0.1:54148</span>
+<span style="color:#a855f7">[13:36:07.634] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:07.635] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:07.635] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:07.636] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:07.636] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:07.637] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:07.637] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:07.638] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:07.638] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:07.639] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:07.640] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:07.640] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:07.641] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:07.641] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:07.642] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:07.643] </span><span style="color:#a855f7">[127.0.0.1:54549] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:07.655] </span><span style="color:#f1c40f">[-] 127.0.0.1:54549</span>
+<span style="color:#a855f7">[13:36:35.449] </span><span style="color:#f1c40f">[-] 127.0.0.1:54148</span>
+<span style="color:#a855f7">[13:36:35.450] </span><span style="color:#f1c40f">[TCP Server] stopped</span>
+<span style="color:#a855f7">[13:36:41.415] </span><span style="color:#f1c40f">[TCP Server] listening on 0.0.0.0:5000</span>
+<span style="color:#a855f7">[13:36:44.301] </span><span style="color:#f1c40f">[+] 127.0.0.1:55890</span>
+<span style="color:#a855f7">[13:36:44.306] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:44.307] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:44.308] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:44.309] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:44.309] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:44.310] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:44.311] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:44.311] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:44.312] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:44.312] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.313] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:44.314] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:44.315] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:44.315] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:44.316] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:44.317] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.318] </span><span style="color:#a855f7">[127.0.0.1:55890] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:44.318] </span><span style="color:#f1c40f">[+] 127.0.0.1:57847</span>
+<span style="color:#a855f7">[13:36:44.328] </span><span style="color:#f1c40f">[-] 127.0.0.1:55890</span>
+<span style="color:#a855f7">[13:36:44.766] </span><span style="color:#f1c40f">[+] 127.0.0.1:58133</span>
+<span style="color:#a855f7">[13:36:44.767] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:44.768] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:44.768] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:44.769] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:44.769] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:44.770] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:44.771] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:44.771] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:44.772] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:44.773] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.774] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:44.775] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:44.775] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:44.775] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:44.776] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:44.776] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.777] </span><span style="color:#a855f7">[127.0.0.1:57847] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:44.785] </span><span style="color:#f1c40f">[-] 127.0.0.1:57847</span>
+<span style="color:#a855f7">[13:36:44.789] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:44.790] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:44.790] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:44.791] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:44.791] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:44.791] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:44.792] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:44.792] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:44.792] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:44.793] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.793] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:44.794] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:44.794] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:44.795] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:44.795] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:44.795] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.796] </span><span style="color:#a855f7">[127.0.0.1:58133] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:44.816] </span><span style="color:#f1c40f">[-] 127.0.0.1:58133</span>
+<span style="color:#a855f7">[13:36:44.818] </span><span style="color:#f1c40f">[+] 127.0.0.1:65016</span>
+<span style="color:#a855f7">[13:36:44.828] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:44.828] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:44.829] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:44.829] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:44.829] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:44.830] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:44.831] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:44.833] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:44.834] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:44.834] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.835] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:44.835] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:44.836] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:44.836] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:44.836] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:44.837] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.837] </span><span style="color:#a855f7">[127.0.0.1:65016] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:44.859] </span><span style="color:#f1c40f">[-] 127.0.0.1:65016</span>
+<span style="color:#a855f7">[13:36:44.940] </span><span style="color:#f1c40f">[+] 127.0.0.1:59505</span>
+<span style="color:#a855f7">[13:36:44.948] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:44.949] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:44.950] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:44.950] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:44.950] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:44.951] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:44.951] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:44.951] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:44.952] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:44.952] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.953] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:44.953] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:44.954] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:44.954] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:44.954] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:44.955] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:44.955] </span><span style="color:#a855f7">[127.0.0.1:59505] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:44.956] </span><span style="color:#f1c40f">[+] 127.0.0.1:54318</span>
+<span style="color:#a855f7">[13:36:44.983] </span><span style="color:#f1c40f">[-] 127.0.0.1:59505</span>
+<span style="color:#a855f7">[13:36:45.101] </span><span style="color:#f1c40f">[+] 127.0.0.1:51165</span>
+<span style="color:#a855f7">[13:36:45.102] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.103] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.103] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.104] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.104] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.105] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.105] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.106] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.106] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.107] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.107] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.108] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.108] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.108] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.109] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.109] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.109] </span><span style="color:#a855f7">[127.0.0.1:54318] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.130] </span><span style="color:#f1c40f">[-] 127.0.0.1:54318</span>
+<span style="color:#a855f7">[13:36:45.133] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.134] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.135] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.135] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.136] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.136] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.137] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.137] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.137] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.138] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.139] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.139] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.139] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.140] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.140] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.140] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.141] </span><span style="color:#a855f7">[127.0.0.1:51165] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.161] </span><span style="color:#f1c40f">[-] 127.0.0.1:51165</span>
+<span style="color:#a855f7">[13:36:45.162] </span><span style="color:#f1c40f">[+] 127.0.0.1:52158</span>
+<span style="color:#a855f7">[13:36:45.170] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.170] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.171] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.171] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.172] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.172] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.172] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.173] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.173] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.173] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.174] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.174] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.175] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.175] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.175] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.176] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.176] </span><span style="color:#a855f7">[127.0.0.1:52158] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.201] </span><span style="color:#f1c40f">[-] 127.0.0.1:52158</span>
+<span style="color:#a855f7">[13:36:45.403] </span><span style="color:#f1c40f">[+] 127.0.0.1:53430</span>
+<span style="color:#a855f7">[13:36:45.409] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.410] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.412] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.412] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.413] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.413] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.415] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.415] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.416] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.417] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.418] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.418] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.419] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.419] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.420] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.420] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.420] </span><span style="color:#a855f7">[127.0.0.1:53430] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.421] </span><span style="color:#f1c40f">[+] 127.0.0.1:51197</span>
+<span style="color:#a855f7">[13:36:45.448] </span><span style="color:#f1c40f">[-] 127.0.0.1:53430</span>
+<span style="color:#a855f7">[13:36:45.565] </span><span style="color:#f1c40f">[+] 127.0.0.1:58384</span>
+<span style="color:#a855f7">[13:36:45.566] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.566] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.567] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.567] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.568] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.568] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.569] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.569] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.570] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.571] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.572] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.573] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.573] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.573] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.574] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.574] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.575] </span><span style="color:#a855f7">[127.0.0.1:51197] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.595] </span><span style="color:#f1c40f">[-] 127.0.0.1:51197</span>
+<span style="color:#a855f7">[13:36:45.596] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.596] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.597] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.598] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.600] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.601] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.602] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.603] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.604] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.604] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.605] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.605] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.606] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.606] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.606] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.607] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.607] </span><span style="color:#a855f7">[127.0.0.1:58384] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.627] </span><span style="color:#f1c40f">[-] 127.0.0.1:58384</span>
+<span style="color:#a855f7">[13:36:45.628] </span><span style="color:#f1c40f">[+] 127.0.0.1:52156</span>
+<span style="color:#a855f7">[13:36:45.637] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.637] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.637] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.638] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.638] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.639] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.639] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.639] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.640] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.640] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.641] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.641] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.641] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.642] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.642] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.642] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.643] </span><span style="color:#a855f7">[127.0.0.1:52156] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.666] </span><span style="color:#f1c40f">[-] 127.0.0.1:52156</span>
+<span style="color:#a855f7">[13:36:45.878] </span><span style="color:#f1c40f">[+] 127.0.0.1:50255</span>
+<span style="color:#a855f7">[13:36:45.886] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:45.888] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:45.888] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:45.889] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:45.889] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:45.889] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:45.890] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:45.890] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:45.890] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:45.891] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.892] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:45.892] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:45.892] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:45.893] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:45.893] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:45.893] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:45.894] </span><span style="color:#a855f7">[127.0.0.1:50255] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:45.894] </span><span style="color:#f1c40f">[+] 127.0.0.1:62646</span>
+<span style="color:#a855f7">[13:36:45.926] </span><span style="color:#f1c40f">[-] 127.0.0.1:50255</span>
+<span style="color:#a855f7">[13:36:46.029] </span><span style="color:#f1c40f">[+] 127.0.0.1:50333</span>
+<span style="color:#a855f7">[13:36:46.030] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.031] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.031] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.032] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.032] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.033] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.033] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.035] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.035] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.036] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.037] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.038] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.039] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.039] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.039] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.040] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.040] </span><span style="color:#a855f7">[127.0.0.1:62646] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.059] </span><span style="color:#f1c40f">[-] 127.0.0.1:62646</span>
+<span style="color:#a855f7">[13:36:46.060] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.061] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.061] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.062] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.062] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.064] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.065] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.066] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.067] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.068] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.068] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.069] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.069] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.069] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.070] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.070] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.071] </span><span style="color:#a855f7">[127.0.0.1:50333] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.090] </span><span style="color:#f1c40f">[-] 127.0.0.1:50333</span>
+<span style="color:#a855f7">[13:36:46.091] </span><span style="color:#f1c40f">[+] 127.0.0.1:56559</span>
+<span style="color:#a855f7">[13:36:46.094] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.095] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.096] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.096] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.097] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.098] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.099] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.101] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.102] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.102] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.103] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.104] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.104] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.105] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.105] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.106] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.106] </span><span style="color:#a855f7">[127.0.0.1:56559] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.133] </span><span style="color:#f1c40f">[-] 127.0.0.1:56559</span>
+<span style="color:#a855f7">[13:36:46.355] </span><span style="color:#f1c40f">[+] 127.0.0.1:51019</span>
+<span style="color:#a855f7">[13:36:46.357] </span><span style="color:#f1c40f">[+] 127.0.0.1:51834</span>
+<span style="color:#a855f7">[13:36:46.364] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.366] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.367] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.367] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.368] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.368] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.369] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.369] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.369] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.370] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.371] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.371] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.371] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.372] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.372] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.372] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.373] </span><span style="color:#a855f7">[127.0.0.1:51019] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.402] </span><span style="color:#f1c40f">[-] 127.0.0.1:51019</span>
+<span style="color:#a855f7">[13:36:46.517] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.518] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.518] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.519] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.519] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.521] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.521] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.522] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.522] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.524] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.525] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.525] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.525] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.526] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.526] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.527] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.527] </span><span style="color:#a855f7">[127.0.0.1:51834] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.527] </span><span style="color:#f1c40f">[+] 127.0.0.1:59450</span>
+<span style="color:#a855f7">[13:36:46.546] </span><span style="color:#f1c40f">[-] 127.0.0.1:51834</span>
+<span style="color:#a855f7">[13:36:46.548] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.549] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.551] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.552] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.552] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.553] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.553] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.553] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.554] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.554] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.555] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.555] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.555] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.556] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.556] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.557] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.557] </span><span style="color:#a855f7">[127.0.0.1:59450] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.577] </span><span style="color:#f1c40f">[-] 127.0.0.1:59450</span>
+<span style="color:#a855f7">[13:36:46.577] </span><span style="color:#f1c40f">[+] 127.0.0.1:57196</span>
+<span style="color:#a855f7">[13:36:46.583] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.584] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.584] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.585] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.585] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.586] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.586] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.586] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.587] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.587] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.588] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.588] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.588] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.589] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.589] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.590] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.591] </span><span style="color:#a855f7">[127.0.0.1:57196] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.613] </span><span style="color:#f1c40f">[-] 127.0.0.1:57196</span>
+<span style="color:#a855f7">[13:36:46.826] </span><span style="color:#f1c40f">[+] 127.0.0.1:62358</span>
+<span style="color:#a855f7">[13:36:46.827] </span><span style="color:#f1c40f">[+] 127.0.0.1:52441</span>
+<span style="color:#a855f7">[13:36:46.837] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.837] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.838] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.838] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.838] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.839] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.839] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.839] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.840] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.840] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.841] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.841] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.842] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.842] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.842] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.843] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.843] </span><span style="color:#a855f7">[127.0.0.1:62358] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.870] </span><span style="color:#f1c40f">[-] 127.0.0.1:62358</span>
+<span style="color:#a855f7">[13:36:46.987] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:46.988] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:46.988] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:46.989] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:46.989] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:46.990] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:46.991] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:46.991] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:46.992] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:46.993] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.994] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:46.994] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:46.995] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:46.995] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:46.996] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:46.996] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:46.997] </span><span style="color:#a855f7">[127.0.0.1:52441] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:46.999] </span><span style="color:#f1c40f">[+] 127.0.0.1:52251</span>
+<span style="color:#a855f7">[13:36:47.017] </span><span style="color:#f1c40f">[-] 127.0.0.1:52441</span>
+<span style="color:#a855f7">[13:36:47.018] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:47.018] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:47.019] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:47.019] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:47.019] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:47.020] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:47.020] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:47.021] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:47.021] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:47.022] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.022] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:47.023] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:47.023] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:47.023] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:47.024] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:47.024] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.025] </span><span style="color:#a855f7">[127.0.0.1:52251] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:47.044] </span><span style="color:#f1c40f">[-] 127.0.0.1:52251</span>
+<span style="color:#a855f7">[13:36:47.045] </span><span style="color:#f1c40f">[+] 127.0.0.1:54684</span>
+<span style="color:#a855f7">[13:36:47.052] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:47.052] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:47.053] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:47.053] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:47.053] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:47.054] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:47.054] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:47.054] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:47.055] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:47.055] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.056] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:47.056] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:47.056] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:47.057] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:47.057] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:47.058] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.058] </span><span style="color:#a855f7">[127.0.0.1:54684] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:47.079] </span><span style="color:#f1c40f">[-] 127.0.0.1:54684</span>
+<span style="color:#a855f7">[13:36:47.332] </span><span style="color:#f1c40f">[+] 127.0.0.1:57792</span>
+<span style="color:#a855f7">[13:36:47.333] </span><span style="color:#f1c40f">[+] 127.0.0.1:53945</span>
+<span style="color:#a855f7">[13:36:47.339] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">GET / HTTP/1.1</span>
+<span style="color:#a855f7">[13:36:47.340] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Host: 127.0.0.1:5000</span>
+<span style="color:#a855f7">[13:36:47.341] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Connection: keep-alive</span>
+<span style="color:#a855f7">[13:36:47.341] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Cache-Control: max-age=0</span>
+<span style="color:#a855f7">[13:36:47.342] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;155&quot;, &quot;Chromium&quot;;v=&quot;155&quot;, &quot;Not(A:Brand&quot;;v=&quot;24&quot;</span>
+<span style="color:#a855f7">[13:36:47.342] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">sec-ch-ua-mobile: ?0</span>
+<span style="color:#a855f7">[13:36:47.343] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">sec-ch-ua-platform: &quot;Windows&quot;</span>
+<span style="color:#a855f7">[13:36:47.343] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Upgrade-Insecure-Requests: 1</span>
+<span style="color:#a855f7">[13:36:47.343] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36</span>
+<span style="color:#a855f7">[13:36:47.344] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.345] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Sec-Fetch-Site: cross-site</span>
+<span style="color:#a855f7">[13:36:47.345] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Sec-Fetch-Mode: navigate</span>
+<span style="color:#a855f7">[13:36:47.346] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Sec-Fetch-User: ?1</span>
+<span style="color:#a855f7">[13:36:47.347] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Sec-Fetch-Dest: document</span>
+<span style="color:#a855f7">[13:36:47.348] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Accept-Encoding: gzip, deflate, br, zstd</span>
+<span style="color:#a855f7">[13:36:47.349] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5">Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</span>
+<span style="color:#a855f7">[13:36:47.349] </span><span style="color:#a855f7">[127.0.0.1:57792] </span><span style="color:#e6e1f5"></span>
+<span style="color:#a855f7">[13:36:47.377] </span><span style="color:#f1c40f">[-] 127.0.0.1:57792</span>
+<span style="color:#a855f7">[13:36:50.505] </span><span style="color:#f1c40f">[-] 127.0.0.1:53945</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"""Core layer: serial I/O, formatting, logging, theming."""

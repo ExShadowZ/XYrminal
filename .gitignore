@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# --- PyInstaller / build artifacts ---
+build/
+dist/
+*.spec
+
+# --- Логи и локальные данные ---
+logs/
+*.log
+
+# --- Скомпилированные переводы (генерируются из .ts) ---
+# Раскомментируйте, если не хотите хранить .qm в репо:
+# i18n/*.qm
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
