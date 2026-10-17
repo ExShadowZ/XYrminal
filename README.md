@@ -1,264 +1,264 @@
 # XYrminal
 
-**Мультипротокольный терминал для COM, TCP и UDP — швейцарский нож инженера-встраиваемщика.**
+**A multi-protocol terminal for COM, TCP and UDP — a Swiss Army knife for embedded engineers.**
 
-XYrminal объединяет в одном окне последовательный терминал, сетевой клиент и сервер, живой построитель графиков, систему сценариев для автоматизации и передачу файлов на микроконтроллеры. Всё, что обычно требует пяти разных программ, здесь работает в одном окне — с одинаковым управлением, общими макросами и триггерами на каждой вкладке.
+XYrminal brings together a serial terminal, a network client and server, a live chart builder, a scenario engine for automation, and file transfer to microcontrollers — all in one window. What usually takes five separate programs happens here in a single window, with the same controls, shared macros and triggers on every tab.
 
 ---
 
-## Содержание
+## Table of Contents
 
 - [XYrminal](#xyrminal)
-  - [Содержание](#содержание)
-  - [1. Что умеет программа](#1-что-умеет-программа)
-  - [2. Интерфейс: пять вкладок](#2-интерфейс-пять-вкладок)
-  - [3. Работа с COM-портом](#3-работа-с-com-портом)
-    - [Подключение](#подключение)
-    - [Параметры порта](#параметры-порта)
-    - [Настройки терминала](#настройки-терминала)
-    - [Передача](#передача)
-  - [4. Работа по TCP и UDP](#4-работа-по-tcp-и-udp)
-    - [Клиент](#клиент)
-    - [Сервер](#сервер)
-  - [5. Живой график](#5-живой-график)
-  - [6. Передача файлов](#6-передача-файлов)
-  - [7. Макросы](#7-макросы)
-  - [8. Сценарии](#8-сценарии)
-  - [9. Триггеры подсветки](#9-триггеры-подсветки)
-  - [10. Журналы](#10-журналы)
-  - [11. Оформление и язык](#11-оформление-и-язык)
-  - [12. Что запоминается между запусками](#12-что-запоминается-между-запусками)
-  - [Обратная связь](#обратная-связь)
+  - [Table of Contents](#table-of-contents)
+  - [1. What the program can do](#1-what-the-program-can-do)
+  - [2. Interface: five tabs](#2-interface-five-tabs)
+  - [3. Working with a COM port](#3-working-with-a-com-port)
+    - [Connecting](#connecting)
+    - [Port parameters](#port-parameters)
+    - [Terminal settings](#terminal-settings)
+    - [Transmitting](#transmitting)
+  - [4. Working over TCP and UDP](#4-working-over-tcp-and-udp)
+    - [Client](#client)
+    - [Server](#server)
+  - [5. Live plot](#5-live-plot)
+  - [6. File transfer](#6-file-transfer)
+  - [7. Macros](#7-macros)
+  - [8. Scenarios](#8-scenarios)
+  - [9. Highlight triggers](#9-highlight-triggers)
+  - [10. Logs](#10-logs)
+  - [11. Appearance and language](#11-appearance-and-language)
+  - [12. What is remembered between runs](#12-what-is-remembered-between-runs)
+  - [Feedback](#feedback)
 
 ---
 
-## 1. Что умеет программа
+## 1. What the program can do
 
-- **Пять режимов связи в одном окне**: последовательный порт (RS-232, RS-485, USB-CDC), TCP-клиент, TCP-сервер, UDP-клиент, UDP-сервер.
-- **Приём и передача данных** в текстовом виде и в сырых байтах — HEX, DEC, OCT, BIN и более десяти текстовых кодировок, включая кириллические, японскую и китайские.
-- **Живой график**: разбирает числа из входящего потока по маркерам и рисует несколько кривых одновременно. Экспорт в CSV для Excel.
-- **Передача файлов** на устройства: Raw-поток, XMODEM, YMODEM — с прогресс-баром и возможностью отмены.
-- **Макросы**: десять кнопок на каждой вкладке для мгновенной отправки заранее заготовленных команд.
-- **Сценарии**: текстовые файлы, в которых можно описать последовательность действий, ветвления, циклы, ожидание ответов — и автоматизировать рутинные проверки.
-- **Триггеры**: подсветка нужных фрагментов в потоке — например, слово `ERROR` красным, а `OK` зелёным.
-- **Журналы**: сохранение сессии в обычный текст или в цветной HTML-файл, который можно открыть в любом браузере и проиграть с исходными задержками.
-- **Оформление**: десять готовых тем, собственный редактор палитры, масштаб интерфейса от 75% до 150%.
-- **Восемь языков интерфейса**: английский, русский, белорусский, немецкий, французский, китайский, японский, корейский.
-
----
-
-## 2. Интерфейс: пять вкладок
-
-Вся работа ведётся на пяти вкладках верхнего уровня:
-
-- **COM** — последовательный порт.
-- **TCP Client** — подключение к удалённому TCP-серверу.
-- **TCP Server** — прослушивание локального порта, приём нескольких клиентов одновременно.
-- **UDP Client** — обмен с фиксированным адресом и портом.
-- **UDP Server** — приём датаграмм от любого отправителя с возможностью ответа и широковещательной рассылки.
-
-На каждой вкладке — одинаковый набор элементов: настройки подключения сверху, настройки терминала под ними, область вывода по центру и панель передачи снизу. Научившись работать на одной вкладке, вы без труда разберётесь с остальными.
-
-Строка состояния внизу окна показывает счётчики принятых и отправленных байтов для текущей вкладки и кнопку их сброса.
+- **Five connection modes in one window**: serial port (RS-232, RS-485, USB-CDC), TCP client, TCP server, UDP client, UDP server.
+- **Receive and transmit data** as text or as raw bytes — HEX, DEC, OCT, BIN and more than ten text encodings, including Cyrillic, Japanese and Chinese.
+- **Live plot**: parses numbers from the incoming stream by marker and draws several curves at once. Export to CSV for Excel.
+- **File transfer** to devices: raw stream, XMODEM, YMODEM — with a progress bar and the ability to cancel.
+- **Macros**: ten buttons on every tab for instant sending of pre-prepared commands.
+- **Scenarios**: text files in which you can describe a sequence of actions, branches, loops, waiting for replies — and automate routine checks.
+- **Triggers**: highlighting of the fragments you care about in the stream — for example, the word `ERROR` in red and `OK` in green.
+- **Logs**: saving a session as plain text or as a colored HTML file that can be opened in any browser and replayed with the original delays.
+- **Appearance**: ten built-in themes, a custom palette editor, interface scale from 75% to 150%.
+- **Eight interface languages**: English, Russian, Belarusian, German, French, Chinese, Japanese, Korean.
 
 ---
 
-## 3. Работа с COM-портом
+## 2. Interface: five tabs
 
-### Подключение
+All work is done on five top-level tabs:
 
-Выберите порт из выпадающего списка. Если устройство было подключено после запуска программы, нажмите **Сканировать**, чтобы обновить список. Кнопка **Подключиться** открывает порт, **Отключиться** — закрывает.
+- **COM** — serial port.
+- **TCP Client** — connect to a remote TCP server.
+- **TCP Server** — listen on a local port, accept several clients at once.
+- **UDP Client** — exchange with a fixed address and port.
+- **UDP Server** — receive datagrams from any sender, with the option to reply and to broadcast.
 
-Когда порт открыт, становятся доступны:
+Every tab has the same set of elements: connection settings at the top, terminal settings below them, the output area in the middle, and the transmit panel at the bottom. Once you have learned to work on one tab, you will have no trouble with the others.
 
-- **Тумблеры DTR и RTS** — управляют двумя выходными линиями. DTR обычно подключена к пину сброса микроконтроллера, RTS — к BOOT0 или пину включения загрузчика. Щелчок переключает линию без переоткрытия порта, что удобно при прошивке.
-- **Четыре индикатора CD, RI, DSR, CTS** — показывают состояние входных линий модема. Яркий цвет означает, что линия активна, тусклый — что нет.
-
-### Параметры порта
-
-Скорость, биты данных, чётность, стоп-биты, управление потоком. В каждом выпадающем списке внизу есть пункт **Другое…** — он открывает поле для ввода нестандартного значения.
-
-### Настройки терминала
-
-- **Автопрокрутка** — при поступлении новых данных окно автоматически прокручивается вниз.
-- **Метки времени** — каждая строка получает префикс с текущим временем.
-- **Автосохранение журнала** — текущая сессия записывается в файл сразу по ходу работы, не дожидаясь ручного сохранения.
-- **Кодировка** — как интерпретировать входящие байты: как сырые числа (HEX, DEC, OCT, BIN) или как текст в одной из множества кодировок.
-- **График** — открыть панель живого графика.
-- **Очистить** — стереть содержимое окна вывода.
-- **Сохранить журнал** — записать текущий буфер в папку журналов.
-
-### Передача
-
-Введите текст в поле ввода и нажмите Enter или **Отправить**. Стрелки вверх и вниз листают историю введённых команд.
-
-- **HEX** — трактовать введённое как последовательность шестнадцатеричных байтов.
-- **+CR** — добавить в конец перевода строки. Если включён ещё и **CR=CR+LF**, будет отправлена пара символов CR+LF, иначе только CR.
+The status bar at the bottom of the window shows the counters of received and sent bytes for the current tab and a button to reset them.
 
 ---
 
-## 4. Работа по TCP и UDP
+## 3. Working with a COM port
 
-### Клиент
+### Connecting
 
-На вкладках **TCP Client** и **UDP Client** задаются адрес и порт удалённой стороны, при необходимости — локальный адрес привязки и тайм-аут подключения.
+Choose a port from the drop-down list. If the device was connected after the program started, press **Scan** to refresh the list. The **Connect** button opens the port, **Disconnect** closes it.
 
-Для TCP-клиента есть флажок **Держать соединение**: если связь оборвётся, программа будет каждые две секунды пытаться подключиться заново, пока соединение не восстановится или пока вы не нажмёте «Отключиться».
+While the port is open, the following become available:
 
-Блок **Пинг** позволяет проверить доступность удалённого адреса по TCP и посмотреть статистику, как в консольной утилите PowerShell. Кнопка **Проверить** выполняет фиксированную серию проверок, **Старт** запускает периодический пинг, **Стоп** его останавливает.
+- **DTR and RTS toggles** — control the two output lines. DTR is usually wired to the reset pin of a microcontroller, RTS to BOOT0 or a bootloader-enable pin. Clicking them flips the line without reopening the port, which is convenient when flashing.
+- **Four indicators CD, RI, DSR, CTS** — show the state of the modem input lines. A bright color means the line is active, a dim one means it is not.
 
-### Сервер
+### Port parameters
 
-На вкладке **TCP Server** задаются локальный адрес и порт для прослушивания, а также два флажка:
+Baud rate, data bits, parity, stop bits, flow control. Every drop-down list has a **Custom…** entry at the bottom — it opens a field for entering a non-standard value.
 
-- **Эхо** — возвращать каждому клиенту всё, что от него пришло.
-- **Broadcast всем** — отправлять введённые данные всем подключённым клиентам сразу.
+### Terminal settings
 
-Список клиентов показывает всех, кто сейчас подключён. Можно отключить выбранного клиента или всех сразу.
+- **Auto-scroll** — the window scrolls to the bottom automatically when new data arrives.
+- **Timestamps** — every line gets a prefix with the current time.
+- **Auto-save log** — the current session is written to a file as it happens, without waiting for a manual save.
+- **Encoding** — how to interpret incoming bytes: as raw numbers (HEX, DEC, OCT, BIN) or as text in one of many encodings.
+- **Plot** — open the live plot panel.
+- **Clear** — wipe the contents of the output window.
+- **Save log** — write the current buffer to the logs folder.
 
-На вкладке **UDP Server** задаются локальный порт и адрес привязки. Программа запоминает последнего отправителя и позволяет ответить ему, отправить данные на явно указанный адрес или разослать широковещательно.
+### Transmitting
 
-Принятые данные помечаются префиксом с адресом отправителя. События сервера — подключение, отключение, запуск и остановка прослушивания — выводятся отдельным цветом, чтобы их было легко отличить от полезных данных.
+Type text into the input field and press Enter or **Send**. The up and down arrows cycle through the history of entered commands.
 
----
-
-## 5. Живой график
-
-Нажмите кнопку **График** в настройках терминала — область вывода разделится на две части: слева текст, справа график.
-
-Каждая строка в настройках графика описывает одну переменную и состоит из двух полей:
-
-- **Имя** — обязательно, оно будет отображаться в легенде.
-- **Маркер парсинга** — необязателен. Если он задан, программа ищет этот маркер во входящем тексте и берёт первое число после него. Если маркер пуст, берётся просто первое число в принятом блоке данных.
-
-Можно задать несколько строк — тогда на одном графике появятся несколько кривых, каждая своим цветом.
-
-Управление:
-
-- **Начать построение** — запустить сбор данных.
-- **Пауза / Продолжить** — заморозить сбор без потери данных и возобновить его.
-- **Завершить построение** — закончить сессию и закрыть панель.
-
-Режим **T-Mode** переключает горизонтальную ось с номера точки на «секунды назад». В этом режиме график прокручивается непрерывно, даже если новые данные не поступают.
-
-Параметр **View** определяет, сколько точек (в обычном режиме) или секунд (в T-Mode) помещается в окно.
-
-Кнопка **Экспорт CSV** сохраняет все каналы в файл, который удобно открывать в Excel. Пропущенные значения остаются пустыми ячейками. Файл записывается в UTF-8, чтобы русские имена каналов отображались правильно.
-
-При наведении мыши на график появляется подсказка с точным значением.
+- **HEX** — treat the input as a sequence of hexadecimal bytes.
+- **+CR** — append a line ending. If **CR=CR+LF** is also enabled, a CR+LF pair will be sent, otherwise only CR.
 
 ---
 
-## 6. Передача файлов
+## 4. Working over TCP and UDP
 
-Передача файлов доступна на вкладках **COM**, **TCP Client** и **UDP Client**.
+### Client
 
-Выберите файл через кнопку **Обзор…**, укажите протокол и нажмите **Отправить файл**. Во время передачи виден прогресс-бар; рядом есть кнопка отмены.
+On the **TCP Client** and **UDP Client** tabs you specify the address and port of the remote side, and optionally a local bind address and a connection timeout.
 
-Поддерживаются протоколы:
+For the TCP client there is a **Keep connection** checkbox: if the link drops, the program will try to reconnect every two seconds until the connection is restored or until you press Disconnect.
 
-- **Raw** — передача содержимого файла порциями байтов с настраиваемой задержкой между порциями. Подходит для загрузчиков, образов и конфигураций.
-- **XMODEM** — классический протокол блоками по 128 байт с проверкой целостности.
-- **YMODEM** — расширение XMODEM с передачей имени и размера файла в первом блоке; стандарт для микроконтроллеров STM32, ESP и AVR.
-- **ZMODEM** — пока не реализован.
+The **Ping** block lets you check the reachability of a remote address over TCP and view statistics, similar to the PowerShell command-line utility. The **Check** button runs a fixed series of probes, **Start** begins periodic pinging, **Stop** ends it.
 
-Размер порции, задержка и максимальный допустимый размер файла настраиваются в разделе **Настройки → Настройки передачи**. Там же можно включить запоминание последнего отправленного файла, чтобы путь и протокол восстанавливались при следующем запуске.
+### Server
 
-Протоколы XMODEM, YMODEM и ZMODEM не работают через UDP — это ограничение самого протокола, а не программы.
+On the **TCP Server** tab you specify the local address and port to listen on, along with two checkboxes:
 
----
+- **Echo** — return to each client everything that came from it.
+- **Broadcast to all** — send the entered data to all connected clients at once.
 
-## 7. Макросы
+The client list shows everyone currently connected. You can disconnect the selected client or all of them at once.
 
-На каждой вкладке есть десять слотов, обозначенных M1…M10. Каждый слот — это заранее заготовленная команда, которая отправляется одним щелчком.
+On the **UDP Server** tab you specify the local port and bind address. The program remembers the last sender and lets you reply to them, send data to an explicitly specified address, or send it out as a broadcast.
 
-У каждого макроса свои флаги **+CR**, **CR=CR+LF** и **HEX** — независимо от флагов над полем ввода. Это удобно, когда нужно смешивать текстовые и бинарные команды.
-
-Наведите курсор на кнопку макроса — появится подсказка с его содержимым. Пустые слоты отключены и не нажимаются.
-
-Редактор макросов открывается через меню **Настройки → Настроить макросы** и позволяет заполнить все десять слотов для выбранной вкладки. Сбросить макросы одной вкладки или всех сразу можно через **Настройки → Сбросить все макросы**.
+Incoming data is prefixed with the sender's address. Server events — connection, disconnection, starting and stopping listening — are printed in a dedicated color so that they are easy to tell apart from useful data.
 
 ---
 
-## 8. Сценарии
+## 5. Live plot
 
-Сценарий — это текстовый файл с расширением `.xyscen`, в котором по одной строке записаны команды. Такой файл можно назначить на любой из слотов M1…M10 — тогда кнопка слота станет `S#`, и по нажатию запустится сценарий.
+Press the **Plot** button in the terminal settings — the output area will split into two parts: text on the left, plot on the right.
 
-Сценарии позволяют автоматизировать рутинные проверки: отправить команду, дождаться ответа, проверить содержимое, принять решение, повторить в цикле, залогировать результат.
+Each row in the plot settings describes one variable and consists of two fields:
 
-Поддерживаются два стиля записи, которые можно свободно смешивать в одном файле:
+- **Name** — required; it will be displayed in the legend.
+- **Parse marker** — optional. If set, the program searches for this marker in the incoming text and takes the first number after it. If the marker is empty, the first number in the received data block is taken.
 
-- **Простой стиль** — по одной команде на строку: отправить, подождать, ожидать ответ, записать в журнал.
-- **Стиль с блоками** — мини-язык с переменными, выражениями, условиями `if/else`, циклами `while` и `for`, операторами сравнения и арифметики.
+You can define several rows — then several curves will appear on the same plot, each in its own color.
 
-Во время выполнения сценария все макросы и поле ввода блокируются. Ход выполнения печатается в терминал строками `[SCENARIO] …` своим цветом. Рядом с макросами появляется кнопка **Стоп**, если нужно прервать сценарий.
+Controls:
 
-Полное описание команд, операторов и встроенных функций — в **Справке** внутри программы (меню **Справка → Информация**).
+- **Start** — begin collecting data.
+- **Pause / Resume** — freeze the capture without losing data and resume it.
+- **Stop** — end the session and close the panel.
 
----
+The **T-Mode** toggle switches the horizontal axis from the sample index to "seconds ago". In this mode the plot scrolls continuously even when no new data arrives.
 
-## 9. Триггеры подсветки
+The **View** parameter determines how many points (in normal mode) or seconds (in T-Mode) fit into the window.
 
-Триггеры позволяют подсвечивать нужные фрагменты в потоке вывода — например, слово `ERROR` красным фоном, а `OK` — зелёным текстом.
+The **Export CSV** button saves all channels to a file that is convenient to open in Excel. Missing values remain as empty cells. The file is written in UTF-8 so that Russian channel names are displayed correctly.
 
-Настройка выполняется в разделе **Настройки → Настроить триггеры** для каждой вкладки отдельно. Каждая строка задаёт текст для поиска и два цвета — текста и фона. Поиск не учитывает регистр. При пересечении двух триггеров побеждает тот, что расположен выше в списке.
-
-На одну вкладку можно задать до пятидесяти триггеров. Они сохраняются и в цветных HTML-журналах, поэтому при открытии такого журнала в браузере подсветка отображается в точности как в программе.
-
-Сбросить триггеры одной вкладки или всех сразу можно через **Настройки → Сбросить триггеры**.
+Hovering the mouse over the plot brings up a tooltip with the exact value.
 
 ---
 
-## 10. Журналы
+## 6. File transfer
 
-Всё, что выводится в терминал, можно сохранить на диск.
+File transfer is available on the **COM**, **TCP Client** and **UDP Client** tabs.
 
-- **Сохранить журнал** — записать текущий буфер в папку `logs` рядом с программой. Имя файла генерируется автоматически.
-- **Сохранить журнал как…** — выбрать место и формат сохранения:
-  - обычный текст — для дальнейшей обработки;
-  - цветной HTML — для просмотра в браузере с сохранением всей подсветки.
+Select a file with the **Browse…** button, choose a protocol and press **Send file**. During the transfer a progress bar is shown; next to it there is a cancel button.
 
-Журналы в цветном формате можно открыть прямо в программе через **Журналы → Открыть журнал…**. Откроется отдельное окно с панелью **Запуск / Пауза / Стоп**, которая проигрывает журнал с исходными задержками между строками — как если бы вы смотрели запись сессии в реальном времени.
+Supported protocols:
 
-Обычные текстовые журналы загружаются прямо в терминал текущей вкладки.
+- **Raw** — send the file contents in chunks of bytes with a configurable delay between chunks. Suitable for bootloaders, images and configurations.
+- **XMODEM** — the classic protocol with 128-byte blocks and integrity checking.
+- **YMODEM** — an extension of XMODEM with the file name and size in the first block; the standard for STM32, ESP and AVR microcontrollers.
+- **ZMODEM** — not implemented yet.
 
-Кнопка **Открыть папку журналов** открывает папку `logs` в файловом менеджере.
+Chunk size, delay and the maximum allowed file size are configured in **Settings → Transfer settings**. There you can also enable remembering the last sent file so that the path and protocol are restored on the next launch.
 
----
-
-## 11. Оформление и язык
-
-В меню **Настройки** можно изменить внешний вид программы:
-
-- **Тема** — десять встроенных палитр, режим «Системная» (следует за оформлением операционной системы) и «Пользовательская», где можно задать свои цвета для всех элементов интерфейса. Отдельный пункт «Случайная» мгновенно генерирует новую палитру.
-- **Цвет текста терминала** — перекраска каждой категории вывода (метки времени, отправленные данные, принятые данные, события сервера, вывод сценариев) независимо друг от друга.
-- **Язык** — переключение языка интерфейса без перезапуска программы.
-- **Масштаб системы** — увеличение интерфейса от 75% до 150%. Полезно на мониторах с высоким разрешением.
-
-Внешний вид и язык запоминаются между запусками.
+The XMODEM, YMODEM and ZMODEM protocols do not work over UDP — this is a limitation of the protocol itself, not of the program.
 
 ---
 
-## 12. Что запоминается между запусками
+## 7. Macros
 
-Программа сохраняет при закрытии и восстанавливает при следующем запуске:
+Every tab has ten slots labeled M1…M10. Each slot is a pre-prepared command that is sent with a single click.
 
-- размер и положение окна, активную вкладку;
-- настройки COM-порта, TCP и UDP, параметры пинга;
-- все переключатели в блоках терминала и передачи;
-- видимость групп на каждой вкладке;
-- выбранную тему, включая пользовательскую палитру;
-- масштаб интерфейса и язык;
-- цвета терминала;
-- формат сохранения журналов;
-- все макросы и все триггеры;
-- последний отправленный файл, если включено соответствующее запоминание.
+Each macro has its own **+CR**, **CR=CR+LF** and **HEX** flags — independent of the flags above the input field. This is convenient when you need to mix text and binary commands.
 
-Всё это восстанавливается автоматически — после перезапуска программа выглядит так же, как вы её оставили.
+Hover over a macro button — a tooltip with its contents appears. Empty slots are disabled and cannot be pressed.
+
+The macro editor opens through the **Settings → Configure macros** menu and lets you fill all ten slots for the selected tab. You can reset the macros of one tab or all of them at once through **Settings → Reset all macros**.
 
 ---
 
-## Обратная связь
+## 8. Scenarios
+
+A scenario is a text file with the `.xyscen` extension in which commands are written one per line. Such a file can be assigned to any of the slots M1…M10 — then the slot button becomes `S#` and pressing it starts the scenario.
+
+Scenarios let you automate routine checks: send a command, wait for a reply, check the contents, make a decision, repeat in a loop, log the result.
+
+Two styles of writing are supported and can be freely mixed in the same file:
+
+- **Simple style** — one command per line: send, wait, expect a reply, write to the log.
+- **Block style** — a mini-language with variables, expressions, `if/else` conditions, `while` and `for` loops, comparison and arithmetic operators.
+
+While the scenario is running, all macros and the input field are blocked. Progress is printed to the terminal as `[SCENARIO] …` lines in their own color. Next to the macros a **Stop** button appears in case the scenario needs to be interrupted.
+
+A full description of commands, operators and built-in functions is available in the **Help** inside the program (menu **Help → Info**).
+
+---
+
+## 9. Highlight triggers
+
+Triggers let you highlight the fragments you care about in the output stream — for example, the word `ERROR` with a red background and `OK` with green text.
+
+The setup is done in **Settings → Configure triggers** separately for each tab. Each row specifies a text to search for and two colors — for the text and for the background. The search is case-insensitive. When two triggers overlap, the one higher in the list wins.
+
+Up to fifty triggers can be defined per tab. They are also saved in colored HTML logs, so when such a log is opened in a browser the highlighting appears exactly as it did in the program.
+
+You can reset the triggers of one tab or all of them at once through **Settings → Reset triggers**.
+
+---
+
+## 10. Logs
+
+Everything that is printed to the terminal can be saved to disk.
+
+- **Save log** — write the current buffer to the `logs` folder next to the program. The file name is generated automatically.
+- **Save log as…** — choose the location and the save format:
+  - plain text — for further processing;
+  - colored HTML — for viewing in a browser with all the highlighting preserved.
+
+Colored logs can be opened directly in the program through **Logs → Open log…**. A separate window opens with a **Play / Pause / Stop** toolbar that replays the log with the original delays between lines — as if you were watching a recording of the session in real time.
+
+Plain text logs are loaded directly into the terminal of the current tab.
+
+The **Open logs folder** button opens the `logs` folder in your file manager.
+
+---
+
+## 11. Appearance and language
+
+The **Settings** menu lets you change the appearance of the program:
+
+- **Theme** — ten built-in palettes, the "System" mode (follows the operating system's theme) and "Custom", where you can set your own colors for all interface elements. A separate "Random" item instantly generates a new palette.
+- **Terminal text color** — recoloring each output category (timestamps, transmitted data, received data, server events, scenario output) independently of the others.
+- **Language** — switch the interface language without restarting the program.
+- **UI scale** — scale the interface from 75% to 150%. Useful on high-resolution monitors.
+
+Appearance and language are remembered between runs.
+
+---
+
+## 12. What is remembered between runs
+
+On exit the program saves, and on the next launch restores:
+
+- the size and position of the window, the active tab;
+- COM port, TCP and UDP settings, ping parameters;
+- all toggles in the terminal and transmit blocks;
+- group visibility on each tab;
+- the selected theme, including the custom palette;
+- the interface scale and language;
+- the terminal colors;
+- the log save format;
+- all macros and all triggers;
+- the last sent file, if the corresponding remembering option is enabled.
+
+All of this is restored automatically — after a restart the program looks exactly as you left it.
+
+---
+
+## Feedback
 
 - Telegram: https://t.me/oiiaiioiiia
 - GitHub: https://github.com/ExShadowZ
