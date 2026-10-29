@@ -317,16 +317,19 @@ class TransmitGroup(QGroupBox):
 
     def set_transfer_active(self, active: bool) -> None:
         for w in (self.input, self.send_btn,
-                  self.hex_btn, self.cr_btn, self.crlf_btn):
+                self.hex_btn, self.cr_btn, self.crlf_btn):
             w.setEnabled(not active)
 
         if self._show_file:
             for w in (self.file_send_btn, self.browse_btn,
-                      self.file_edit, self.proto_combo):
+                    self.file_edit, self.proto_combo):
                 w.setEnabled(not active)
 
-        for btn in self._macro_buttons:
-            btn.setEnabled(not active and btn.isEnabled())
+        if active:
+            for btn in self._macro_buttons:
+                btn.setEnabled(False)
+        else:
+            self._refresh_macros()
 
         self._set_progress_visible(active)
         if active and self._show_file:
@@ -442,11 +445,14 @@ class TransmitGroup(QGroupBox):
 
     def _on_scenario_busy(self, busy: bool) -> None:
         for w in (self.input, self.send_btn,
-                  self.hex_btn, self.cr_btn, self.crlf_btn):
+                self.hex_btn, self.cr_btn, self.crlf_btn):
             w.setEnabled(not busy)
 
-        for btn in self._macro_buttons:
-            btn.setEnabled(not busy and btn.isEnabled())
+        if busy:
+            for btn in self._macro_buttons:
+                btn.setEnabled(False)
+        else:
+            self._refresh_macros()
 
         self.stop_scenario_btn.setVisible(busy)
         self.stop_scenario_btn.setEnabled(busy)

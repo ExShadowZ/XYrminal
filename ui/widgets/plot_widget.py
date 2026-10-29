@@ -142,7 +142,10 @@ class PlotWidget(QWidget):
     def _apply_mode(self) -> None:
         if self._time_mode:
             self._scroll.hide()
-            self._tick.start()
+            if self._store.is_active() and not self._store.is_paused():
+                self._tick.start()
+            else:
+                self._tick.stop()
         else:
             self._scroll.show()
             self._tick.stop()
@@ -164,6 +167,7 @@ class PlotWidget(QWidget):
 
     def _on_state(self) -> None:
         if not self._store.is_active():
+            # session ended (Stop)
             self._autoscroll = True
             self._offset = 0
             self._refresh_scroll_range()
@@ -172,6 +176,17 @@ class PlotWidget(QWidget):
             self._scroll.blockSignals(False)
             self._update_info()
             self._canvas.update()
+            return
+
+        # session is active — react to pause/resume
+        if self._time_mode:
+            if self._store.is_paused():
+                self._tick.stop()
+            else:
+                self._tick.start()
+
+        self._update_info()
+        self._canvas.update()
 
     def _canvas_update(self) -> None:
         """Called by the time-mode tick timer."""

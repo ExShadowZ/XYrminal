@@ -30,7 +30,7 @@ from core.plot_store import PlotStore
 
 
 APP_NAME    = "XYrminal"
-APP_VERSION = "v0.5.30"
+APP_VERSION = "v0.5.40"
 APP_AUTHOR  = "ExShadow"
 
 APP_TELEGRAM = "https://t.me/oiiaiioiiia"

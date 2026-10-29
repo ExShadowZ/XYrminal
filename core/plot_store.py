@@ -89,6 +89,9 @@ class PlotStore(QObject):
         # monotonic clock: seconds since start()
         self._t0: float = 0.0
 
+        # frozen "now" while paused (None when not paused)
+        self._paused_at: Optional[float] = None
+
     # -- state -------------------------------------------------------------
     def is_running(self) -> bool:
         return self._running and not self._paused
@@ -106,6 +109,8 @@ class PlotStore(QObject):
         """Seconds elapsed since the current session started."""
         if not self._running:
             return 0.0
+        if self._paused and self._paused_at is not None:
+            return self._paused_at
         return time.monotonic() - self._t0
 
     def session_seconds(self) -> float:
@@ -134,33 +139,44 @@ class PlotStore(QObject):
     # -- session control ---------------------------------------------------
     def start(self, channels: list[tuple[str, str]]) -> None:
         self._t0 = time.monotonic()
+        self._paused_at = None
         self.configure(channels)
         self._running = True
         self._paused = False
         self.state_changed.emit()
 
     def pause(self) -> None:
-        if not self._running:
+        if not self._running or self._paused:
             return
         self._paused = True
+        self._paused_at = time.monotonic() - self._t0
         self.state_changed.emit()
 
     def resume(self) -> None:
-        if not self._running:
+        if not self._running or not self._paused:
             return
+        # Seamless resume: shift _t0 forward by the pause duration,
+        # so the effective "now" stays exactly where it was frozen.
+        if self._paused_at is not None:
+            paused_duration = (time.monotonic() - self._t0) - self._paused_at
+            self._t0 += paused_duration
         self._paused = False
+        self._paused_at = None
         self.state_changed.emit()
 
     def stop(self) -> None:
         self._running = False
         self._paused = False
+        self._paused_at = None
         self.state_changed.emit()
 
     def toggle_pause(self) -> None:
         if not self._running:
             return
-        self._paused = not self._paused
-        self.state_changed.emit()
+        if self._paused:
+            self.resume()
+        else:
+            self.pause()
 
     def clear_data(self) -> None:
         for ch in self._channels:
